@@ -1,0 +1,5 @@
+scenario,op,kind,outcome,detail,value,unit
+G10-majority-time-override,majority_time_override,amendment_majority_time,overridden,majority hold set to 15 minutes,15,minutes
+G10-majority-time-override,set_support,fixExample,set,30 validators voting up,30,validators
+G10-majority-time-override,advance,ledgers,validated,"1.0000 days: quorum 24, online 35, validated 21600, missed 0",21600,ledgers
+G10-majority-time-override,advance,flag-ledgers,evaluated,84 flag ledgers evaluated (doVoting + fee vote),84,flag ledgers

@@ -1,0 +1,257 @@
+{
+  "config": {
+    "amendments": [
+      {
+        "name": "fixExample",
+        "vote_behavior": "DefaultNo"
+      },
+      {
+        "name": "fixSecond",
+        "vote_behavior": "DefaultNo"
+      }
+    ],
+    "majority_hold_days": 14,
+    "post_fix": true,
+    "publishers": [
+      "P1",
+      "P2",
+      "P3"
+    ],
+    "validators": 35
+  },
+  "events": [
+    {
+      "amendment": "fixExample",
+      "day": 0.011851851851851851,
+      "event": "tfGotMajority",
+      "support": 30,
+      "threshold": 23,
+      "trusted_validations": 35
+    },
+    {
+      "amendment": "fixExample",
+      "day": 14.020740740740587,
+      "event": "enabled",
+      "support": 30,
+      "trusted_validations": 35
+    },
+    {
+      "amendment": "fixSecond",
+      "day": 20.01185185185144,
+      "event": "tfGotMajority",
+      "support": 30,
+      "threshold": 20,
+      "trusted_validations": 30
+    },
+    {
+      "amendment": "fixSecond",
+      "day": 34.02074074073972,
+      "event": "enabled",
+      "support": 30,
+      "trusted_validations": 30
+    }
+  ],
+  "final": {
+    "amendments": {
+      "fixExample": {
+        "enabled": true,
+        "enabled_day": 14.0207,
+        "got_majority_count": 1,
+        "has_code": true,
+        "lost_majority_count": 0,
+        "majority_since_day": 0.0119,
+        "support": 30,
+        "vetoed_by": []
+      },
+      "fixSecond": {
+        "enabled": true,
+        "enabled_day": 34.0207,
+        "got_majority_count": 1,
+        "has_code": true,
+        "lost_majority_count": 0,
+        "majority_since_day": 20.0119,
+        "support": 30,
+        "vetoed_by": []
+      }
+    },
+    "blocked_validators": [
+      "V31",
+      "V32",
+      "V33",
+      "V34",
+      "V35"
+    ],
+    "counters": {
+      "amendments_enabled": 2,
+      "exclusions_applied": 0,
+      "fee_changes": 0,
+      "flag_ledgers": 2953,
+      "ledgers_missed": 0,
+      "ledgers_validated": 756000,
+      "majority_restarts": 0,
+      "manifests_revoked": 0,
+      "manifests_rotated": 0,
+      "quorum_disabled_flag_ledgers": 0,
+      "replay_ledgers": 0,
+      "rollback_attempts": 0,
+      "rollback_failures": 0,
+      "validators_blocked": 0
+    },
+    "day": 35.0,
+    "exclusions": [],
+    "fees": {
+      "account_reserve_drops": 10000000,
+      "base_fee_drops": 10,
+      "owner_reserve_drops": 2000000
+    },
+    "ledger_seq": 1756000,
+    "online_trusted": 30,
+    "unl_size": 35,
+    "validation_quorum": 24
+  },
+  "label": "SIMULATED",
+  "pinned_commit": "0085a1ff885d6a446369cf73a4430f75af22be55",
+  "rows": [
+    {
+      "detail": "30 validators voting up",
+      "kind": "fixExample",
+      "op": "set_support",
+      "outcome": "set",
+      "scenario": "G9-amendment-blocked-divergence",
+      "unit": "validators",
+      "value": 30
+    },
+    {
+      "detail": "15.0000 days: quorum 24, online 35, validated 324000, missed 0",
+      "kind": "ledgers",
+      "op": "advance",
+      "outcome": "validated",
+      "scenario": "G9-amendment-blocked-divergence",
+      "unit": "ledgers",
+      "value": 324000
+    },
+    {
+      "detail": "1265 flag ledgers evaluated (doVoting + fee vote)",
+      "kind": "flag-ledgers",
+      "op": "advance",
+      "outcome": "evaluated",
+      "scenario": "G9-amendment-blocked-divergence",
+      "unit": "flag ledgers",
+      "value": 1265
+    },
+    {
+      "detail": "5 validators on old binary",
+      "kind": "validators",
+      "op": "set_binary",
+      "outcome": "old-binary",
+      "scenario": "G9-amendment-blocked-divergence",
+      "unit": "validators",
+      "value": 5
+    },
+    {
+      "detail": "5.0000 days: quorum 24, online 30, validated 108000, missed 0",
+      "kind": "ledgers",
+      "op": "advance",
+      "outcome": "validated",
+      "scenario": "G9-amendment-blocked-divergence",
+      "unit": "ledgers",
+      "value": 108000
+    },
+    {
+      "detail": "422 flag ledgers evaluated (doVoting + fee vote)",
+      "kind": "flag-ledgers",
+      "op": "advance",
+      "outcome": "evaluated",
+      "scenario": "G9-amendment-blocked-divergence",
+      "unit": "flag ledgers",
+      "value": 422
+    },
+    {
+      "detail": "30 validators voting up",
+      "kind": "fixSecond",
+      "op": "set_support",
+      "outcome": "set",
+      "scenario": "G9-amendment-blocked-divergence",
+      "unit": "validators",
+      "value": 30
+    },
+    {
+      "detail": "15.0000 days: quorum 24, online 30, validated 324000, missed 0",
+      "kind": "ledgers",
+      "op": "advance",
+      "outcome": "validated",
+      "scenario": "G9-amendment-blocked-divergence",
+      "unit": "ledgers",
+      "value": 324000
+    },
+    {
+      "detail": "1266 flag ledgers evaluated (doVoting + fee vote)",
+      "kind": "flag-ledgers",
+      "op": "advance",
+      "outcome": "evaluated",
+      "scenario": "G9-amendment-blocked-divergence",
+      "unit": "flag ledgers",
+      "value": 1266
+    }
+  ],
+  "scenario_id": "G9-amendment-blocked-divergence",
+  "severity": "MEDIUM",
+  "severity_reason": "5 validators on old binaries became amendment-blocked when fixExample enabled (day 14.0207): they cannot validate or vote. The network kept validating (30 online >= quorum 24) and fixSecond still enabled (day 34.0207, threshold 20 at 30 validations \u2014 the denominator shrank again), but the safety margin shrank from 11 to 6 validators.",
+  "steps": [
+    {
+      "amendment": "fixExample",
+      "op": "set_support",
+      "step": 0,
+      "up_voters": 30
+    },
+    {
+      "day": 15.0,
+      "flag_ledgers": 1265,
+      "ledger_seq": 1324000,
+      "ledgers": 324000,
+      "online": 35,
+      "op": "advance",
+      "quorum": 24,
+      "step": 1
+    },
+    {
+      "has_new_binary": false,
+      "op": "set_binary",
+      "step": 2,
+      "validators": [
+        "V31",
+        "V32",
+        "V33",
+        "V34",
+        "V35"
+      ]
+    },
+    {
+      "day": 20.0,
+      "flag_ledgers": 422,
+      "ledger_seq": 1432000,
+      "ledgers": 108000,
+      "online": 30,
+      "op": "advance",
+      "quorum": 24,
+      "step": 3
+    },
+    {
+      "amendment": "fixSecond",
+      "op": "set_support",
+      "step": 4,
+      "up_voters": 30
+    },
+    {
+      "day": 35.0,
+      "flag_ledgers": 1266,
+      "ledger_seq": 1756000,
+      "ledgers": 324000,
+      "online": 30,
+      "op": "advance",
+      "quorum": 24,
+      "step": 5
+    }
+  ],
+  "title": "Amendment-blocked divergence: 5 validators on old binaries lose vote and validation, shrinking the safety margin"
+}

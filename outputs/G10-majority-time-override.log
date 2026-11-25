@@ -1,0 +1,5 @@
+day 0.0000 ledger 1000000: AMENDMENT_MAJORITY_TIME overridden to 15 minutes (was 14 days)
+day 0.0000 ledger 1000000: amendment fixExample: up-voters set to 30 validators
+day 0.0000 ledger 1000000: advance 1.0000 days (21600 ledgers, 84 flag ledgers): quorum 24, online 35 — all validated
+day 0.0119 ledger 1000256: amendment fixExample tfGotMajority: support 30/35 threshold 23
+day 0.0237 ledger 1000512: amendment fixExample ENABLED: support 30/35 held 0.0119 days (hold 0.0104)

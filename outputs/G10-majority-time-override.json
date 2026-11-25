@@ -1,0 +1,144 @@
+{
+  "config": {
+    "amendments": [
+      {
+        "name": "fixExample",
+        "vote_behavior": "DefaultNo"
+      }
+    ],
+    "majority_hold_days": 14,
+    "post_fix": true,
+    "publishers": [
+      "P1",
+      "P2",
+      "P3"
+    ],
+    "validators": 35
+  },
+  "events": [
+    {
+      "amendment": "fixExample",
+      "day": 0.011851851851851851,
+      "event": "tfGotMajority",
+      "support": 30,
+      "threshold": 23,
+      "trusted_validations": 35
+    },
+    {
+      "amendment": "fixExample",
+      "day": 0.023703703703703703,
+      "event": "enabled",
+      "support": 30,
+      "trusted_validations": 35
+    }
+  ],
+  "final": {
+    "amendments": {
+      "fixExample": {
+        "enabled": true,
+        "enabled_day": 0.0237,
+        "got_majority_count": 1,
+        "has_code": true,
+        "lost_majority_count": 0,
+        "majority_since_day": 0.0119,
+        "support": 30,
+        "vetoed_by": []
+      }
+    },
+    "blocked_validators": [],
+    "counters": {
+      "amendments_enabled": 1,
+      "exclusions_applied": 0,
+      "fee_changes": 0,
+      "flag_ledgers": 84,
+      "ledgers_missed": 0,
+      "ledgers_validated": 21600,
+      "majority_restarts": 0,
+      "manifests_revoked": 0,
+      "manifests_rotated": 0,
+      "quorum_disabled_flag_ledgers": 0,
+      "replay_ledgers": 0,
+      "rollback_attempts": 0,
+      "rollback_failures": 0,
+      "validators_blocked": 0
+    },
+    "day": 1.0,
+    "exclusions": [],
+    "fees": {
+      "account_reserve_drops": 10000000,
+      "base_fee_drops": 10,
+      "owner_reserve_drops": 2000000
+    },
+    "ledger_seq": 1021600,
+    "online_trusted": 35,
+    "unl_size": 35,
+    "validation_quorum": 24
+  },
+  "label": "SIMULATED",
+  "pinned_commit": "0085a1ff885d6a446369cf73a4430f75af22be55",
+  "rows": [
+    {
+      "detail": "majority hold set to 15 minutes",
+      "kind": "amendment_majority_time",
+      "op": "majority_time_override",
+      "outcome": "overridden",
+      "scenario": "G10-majority-time-override",
+      "unit": "minutes",
+      "value": 15
+    },
+    {
+      "detail": "30 validators voting up",
+      "kind": "fixExample",
+      "op": "set_support",
+      "outcome": "set",
+      "scenario": "G10-majority-time-override",
+      "unit": "validators",
+      "value": 30
+    },
+    {
+      "detail": "1.0000 days: quorum 24, online 35, validated 21600, missed 0",
+      "kind": "ledgers",
+      "op": "advance",
+      "outcome": "validated",
+      "scenario": "G10-majority-time-override",
+      "unit": "ledgers",
+      "value": 21600
+    },
+    {
+      "detail": "84 flag ledgers evaluated (doVoting + fee vote)",
+      "kind": "flag-ledgers",
+      "op": "advance",
+      "outcome": "evaluated",
+      "scenario": "G10-majority-time-override",
+      "unit": "flag ledgers",
+      "value": 84
+    }
+  ],
+  "scenario_id": "G10-majority-time-override",
+  "severity": "MEDIUM",
+  "severity_reason": "AMENDMENT_MAJORITY_TIME overridden to the 15-minute minimum: fixExample enabled day 0.0237 (34 minutes) instead of day 14.0207 \u2014 the hold collapsed 14 days -> 15 minutes (1344x shorter) and end-to-end enablement was 591x faster, with no network-wide check that the hold was shortened.",
+  "steps": [
+    {
+      "minutes": 15,
+      "op": "majority_time_override",
+      "step": 0
+    },
+    {
+      "amendment": "fixExample",
+      "op": "set_support",
+      "step": 1,
+      "up_voters": 30
+    },
+    {
+      "day": 1.0,
+      "flag_ledgers": 84,
+      "ledger_seq": 1021600,
+      "ledgers": 21600,
+      "online": 35,
+      "op": "advance",
+      "quorum": 24,
+      "step": 2
+    }
+  ],
+  "title": "Majority-time override: an operator can shrink the 14-day hold to 15 minutes"
+}

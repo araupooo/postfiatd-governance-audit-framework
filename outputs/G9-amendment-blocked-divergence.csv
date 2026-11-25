@@ -1,0 +1,10 @@
+scenario,op,kind,outcome,detail,value,unit
+G9-amendment-blocked-divergence,set_support,fixExample,set,30 validators voting up,30,validators
+G9-amendment-blocked-divergence,advance,ledgers,validated,"15.0000 days: quorum 24, online 35, validated 324000, missed 0",324000,ledgers
+G9-amendment-blocked-divergence,advance,flag-ledgers,evaluated,1265 flag ledgers evaluated (doVoting + fee vote),1265,flag ledgers
+G9-amendment-blocked-divergence,set_binary,validators,old-binary,5 validators on old binary,5,validators
+G9-amendment-blocked-divergence,advance,ledgers,validated,"5.0000 days: quorum 24, online 30, validated 108000, missed 0",108000,ledgers
+G9-amendment-blocked-divergence,advance,flag-ledgers,evaluated,422 flag ledgers evaluated (doVoting + fee vote),422,flag ledgers
+G9-amendment-blocked-divergence,set_support,fixSecond,set,30 validators voting up,30,validators
+G9-amendment-blocked-divergence,advance,ledgers,validated,"15.0000 days: quorum 24, online 30, validated 324000, missed 0",324000,ledgers
+G9-amendment-blocked-divergence,advance,flag-ledgers,evaluated,1266 flag ledgers evaluated (doVoting + fee vote),1266,flag ledgers
