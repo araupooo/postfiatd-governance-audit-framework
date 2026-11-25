@@ -1,0 +1,5 @@
+scenario,op,kind,outcome,detail,value,unit
+G0-baseline-full-governance,set_support,fixExample,set,30 validators voting up,30,validators
+G0-baseline-full-governance,fee_votes,base_fee_drops,votes-cast,votes {'10': 35},35,votes
+G0-baseline-full-governance,advance,ledgers,validated,"15.0000 days: quorum 24, online 35, validated 324000, missed 0",324000,ledgers
+G0-baseline-full-governance,advance,flag-ledgers,evaluated,1265 flag ledgers evaluated (doVoting + fee vote),1265,flag ledgers

@@ -1,0 +1,5 @@
+day 0.0000 ledger 1000000: amendment fixExample: up-voters set to 30 validators
+day 0.0000 ledger 1000000: fee votes base_fee_drops: {'10': 35}
+day 0.0000 ledger 1000000: advance 15.0000 days (324000 ledgers, 1265 flag ledgers): quorum 24, online 35 — all validated
+day 0.0119 ledger 1000256: amendment fixExample tfGotMajority: support 30/35 threshold 23
+day 14.0207 ledger 1302848: amendment fixExample ENABLED: support 30/35 held 14.0089 days (hold 14.0000)

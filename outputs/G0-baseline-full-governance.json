@@ -1,0 +1,147 @@
+{
+  "config": {
+    "amendments": [
+      {
+        "name": "fixExample",
+        "vote_behavior": "DefaultNo"
+      }
+    ],
+    "majority_hold_days": 14,
+    "post_fix": true,
+    "publishers": [
+      "P1",
+      "P2",
+      "P3"
+    ],
+    "validators": 35
+  },
+  "events": [
+    {
+      "amendment": "fixExample",
+      "day": 0.011851851851851851,
+      "event": "tfGotMajority",
+      "support": 30,
+      "threshold": 23,
+      "trusted_validations": 35
+    },
+    {
+      "amendment": "fixExample",
+      "day": 14.020740740740587,
+      "event": "enabled",
+      "support": 30,
+      "trusted_validations": 35
+    }
+  ],
+  "final": {
+    "amendments": {
+      "fixExample": {
+        "enabled": true,
+        "enabled_day": 14.0207,
+        "got_majority_count": 1,
+        "has_code": true,
+        "lost_majority_count": 0,
+        "majority_since_day": 0.0119,
+        "support": 30,
+        "vetoed_by": []
+      }
+    },
+    "blocked_validators": [],
+    "counters": {
+      "amendments_enabled": 1,
+      "exclusions_applied": 0,
+      "fee_changes": 0,
+      "flag_ledgers": 1265,
+      "ledgers_missed": 0,
+      "ledgers_validated": 324000,
+      "majority_restarts": 0,
+      "manifests_revoked": 0,
+      "manifests_rotated": 0,
+      "quorum_disabled_flag_ledgers": 0,
+      "replay_ledgers": 0,
+      "rollback_attempts": 0,
+      "rollback_failures": 0,
+      "validators_blocked": 0
+    },
+    "day": 15.0,
+    "exclusions": [],
+    "fees": {
+      "account_reserve_drops": 10000000,
+      "base_fee_drops": 10,
+      "owner_reserve_drops": 2000000
+    },
+    "ledger_seq": 1324000,
+    "online_trusted": 35,
+    "unl_size": 35,
+    "validation_quorum": 24
+  },
+  "label": "SIMULATED",
+  "pinned_commit": "0085a1ff885d6a446369cf73a4430f75af22be55",
+  "rows": [
+    {
+      "detail": "30 validators voting up",
+      "kind": "fixExample",
+      "op": "set_support",
+      "outcome": "set",
+      "scenario": "G0-baseline-full-governance",
+      "unit": "validators",
+      "value": 30
+    },
+    {
+      "detail": "votes {'10': 35}",
+      "kind": "base_fee_drops",
+      "op": "fee_votes",
+      "outcome": "votes-cast",
+      "scenario": "G0-baseline-full-governance",
+      "unit": "votes",
+      "value": 35
+    },
+    {
+      "detail": "15.0000 days: quorum 24, online 35, validated 324000, missed 0",
+      "kind": "ledgers",
+      "op": "advance",
+      "outcome": "validated",
+      "scenario": "G0-baseline-full-governance",
+      "unit": "ledgers",
+      "value": 324000
+    },
+    {
+      "detail": "1265 flag ledgers evaluated (doVoting + fee vote)",
+      "kind": "flag-ledgers",
+      "op": "advance",
+      "outcome": "evaluated",
+      "scenario": "G0-baseline-full-governance",
+      "unit": "flag ledgers",
+      "value": 1265
+    }
+  ],
+  "scenario_id": "G0-baseline-full-governance",
+  "severity": "INFO",
+  "severity_reason": "Baseline control: 30/35 support, threshold 23, majority day 0.0119, enabled day 14.0207 after the full 14-day hold; quorum 24; 324,000/324,000 ledgers validated, 0 missed; base fee unchanged at 10 drops.",
+  "steps": [
+    {
+      "amendment": "fixExample",
+      "op": "set_support",
+      "step": 0,
+      "up_voters": 30
+    },
+    {
+      "distribution": {
+        "10": 35
+      },
+      "field": "base_fee_drops",
+      "op": "fee_votes",
+      "step": 1
+    },
+    {
+      "day": 15.0,
+      "flag_ledgers": 1265,
+      "ledger_seq": 1324000,
+      "ledgers": 324000,
+      "online": 35,
+      "op": "advance",
+      "quorum": 24,
+      "step": 2
+    }
+  ],
+  "title": "Baseline: full governance stack under normal conditions"
+}

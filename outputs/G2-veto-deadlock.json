@@ -1,0 +1,259 @@
+{
+  "config": {
+    "amendments": [
+      {
+        "name": "fixExample",
+        "vote_behavior": "DefaultNo"
+      },
+      {
+        "has_code": false,
+        "name": "unknownFeature",
+        "vote_behavior": "DefaultNo"
+      }
+    ],
+    "majority_hold_days": 14,
+    "post_fix": true,
+    "publishers": [
+      "P1",
+      "P2",
+      "P3"
+    ],
+    "validators": 35
+  },
+  "events": [
+    {
+      "amendment": "fixExample",
+      "day": 0.011851851851851851,
+      "event": "tfGotMajority",
+      "support": 30,
+      "threshold": 23,
+      "trusted_validations": 35
+    },
+    {
+      "amendment": "fixExample",
+      "day": 3.011851851851841,
+      "event": "tfLostMajority",
+      "held_days": 2.9999999999999893,
+      "support": 18,
+      "trusted_validations": 35
+    }
+  ],
+  "final": {
+    "amendments": {
+      "fixExample": {
+        "enabled": false,
+        "enabled_day": null,
+        "got_majority_count": 1,
+        "has_code": true,
+        "lost_majority_count": 1,
+        "majority_since_day": null,
+        "support": 19,
+        "vetoed_by": [
+          "V20",
+          "V21",
+          "V22",
+          "V23",
+          "V24",
+          "V25",
+          "V26",
+          "V27",
+          "V28",
+          "V29",
+          "V30"
+        ]
+      },
+      "unknownFeature": {
+        "enabled": false,
+        "enabled_day": null,
+        "got_majority_count": 0,
+        "has_code": false,
+        "lost_majority_count": 0,
+        "majority_since_day": null,
+        "support": 0,
+        "vetoed_by": []
+      }
+    },
+    "blocked_validators": [],
+    "counters": {
+      "amendments_enabled": 0,
+      "exclusions_applied": 0,
+      "fee_changes": 0,
+      "flag_ledgers": 1772,
+      "ledgers_missed": 0,
+      "ledgers_validated": 453600,
+      "majority_restarts": 1,
+      "manifests_revoked": 0,
+      "manifests_rotated": 0,
+      "quorum_disabled_flag_ledgers": 0,
+      "replay_ledgers": 0,
+      "rollback_attempts": 0,
+      "rollback_failures": 0,
+      "validators_blocked": 0
+    },
+    "day": 21.0,
+    "exclusions": [],
+    "fees": {
+      "account_reserve_drops": 10000000,
+      "base_fee_drops": 10,
+      "owner_reserve_drops": 2000000
+    },
+    "ledger_seq": 1453600,
+    "online_trusted": 35,
+    "unl_size": 35,
+    "validation_quorum": 24
+  },
+  "label": "SIMULATED",
+  "pinned_commit": "0085a1ff885d6a446369cf73a4430f75af22be55",
+  "rows": [
+    {
+      "detail": "30 validators voting up",
+      "kind": "fixExample",
+      "op": "set_support",
+      "outcome": "set",
+      "scenario": "G2-veto-deadlock",
+      "unit": "validators",
+      "value": 30
+    },
+    {
+      "detail": "3.0000 days: quorum 24, online 35, validated 64800, missed 0",
+      "kind": "ledgers",
+      "op": "advance",
+      "outcome": "validated",
+      "scenario": "G2-veto-deadlock",
+      "unit": "ledgers",
+      "value": 64800
+    },
+    {
+      "detail": "253 flag ledgers evaluated (doVoting + fee vote)",
+      "kind": "flag-ledgers",
+      "op": "advance",
+      "outcome": "evaluated",
+      "scenario": "G2-veto-deadlock",
+      "unit": "flag ledgers",
+      "value": 253
+    },
+    {
+      "detail": "vetoed by V19,V20,V21,V22,V23,V24,V25,V26,V27,V28,V29,V30",
+      "kind": "fixExample",
+      "op": "veto",
+      "outcome": "vetoed",
+      "scenario": "G2-veto-deadlock",
+      "unit": "validators",
+      "value": 12
+    },
+    {
+      "detail": "7.0000 days: quorum 24, online 35, validated 151200, missed 0",
+      "kind": "ledgers",
+      "op": "advance",
+      "outcome": "validated",
+      "scenario": "G2-veto-deadlock",
+      "unit": "ledgers",
+      "value": 151200
+    },
+    {
+      "detail": "590 flag ledgers evaluated (doVoting + fee vote)",
+      "kind": "flag-ledgers",
+      "op": "advance",
+      "outcome": "evaluated",
+      "scenario": "G2-veto-deadlock",
+      "unit": "flag ledgers",
+      "value": 590
+    },
+    {
+      "detail": "un-vetoed by V19",
+      "kind": "fixExample",
+      "op": "unveto",
+      "outcome": "unvetoed",
+      "scenario": "G2-veto-deadlock",
+      "unit": "validators",
+      "value": 1
+    },
+    {
+      "detail": "11.0000 days: quorum 24, online 35, validated 237600, missed 0",
+      "kind": "ledgers",
+      "op": "advance",
+      "outcome": "validated",
+      "scenario": "G2-veto-deadlock",
+      "unit": "ledgers",
+      "value": 237600
+    },
+    {
+      "detail": "929 flag ledgers evaluated (doVoting + fee vote)",
+      "kind": "flag-ledgers",
+      "op": "advance",
+      "outcome": "evaluated",
+      "scenario": "G2-veto-deadlock",
+      "unit": "flag ledgers",
+      "value": 929
+    }
+  ],
+  "scenario_id": "G2-veto-deadlock",
+  "severity": "MEDIUM",
+  "severity_reason": "12 vetoes cut support 30 -> 18 on day 3 (majority lost after holding 3.0 days); one un-veto raised it to 19, still below the 24-vote bar; the amendment never enabled over 21 days. unknownFeature has no code and never entered voting (effectively vetoed).",
+  "steps": [
+    {
+      "amendment": "fixExample",
+      "op": "set_support",
+      "step": 0,
+      "up_voters": 30
+    },
+    {
+      "day": 3.0,
+      "flag_ledgers": 253,
+      "ledger_seq": 1064800,
+      "ledgers": 64800,
+      "online": 35,
+      "op": "advance",
+      "quorum": 24,
+      "step": 1
+    },
+    {
+      "amendment": "fixExample",
+      "op": "veto",
+      "step": 2,
+      "validators": [
+        "V19",
+        "V20",
+        "V21",
+        "V22",
+        "V23",
+        "V24",
+        "V25",
+        "V26",
+        "V27",
+        "V28",
+        "V29",
+        "V30"
+      ]
+    },
+    {
+      "day": 10.0,
+      "flag_ledgers": 590,
+      "ledger_seq": 1216000,
+      "ledgers": 151200,
+      "online": 35,
+      "op": "advance",
+      "quorum": 24,
+      "step": 3
+    },
+    {
+      "amendment": "fixExample",
+      "op": "unveto",
+      "step": 4,
+      "validators": [
+        "V19"
+      ]
+    },
+    {
+      "day": 21.0,
+      "flag_ledgers": 929,
+      "ledger_seq": 1453600,
+      "ledgers": 237600,
+      "online": 35,
+      "op": "advance",
+      "quorum": 24,
+      "step": 5
+    }
+  ],
+  "title": "Veto deadlock: a blocking minority vetoes an amendment with 30/35 support"
+}

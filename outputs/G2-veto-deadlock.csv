@@ -1,0 +1,10 @@
+scenario,op,kind,outcome,detail,value,unit
+G2-veto-deadlock,set_support,fixExample,set,30 validators voting up,30,validators
+G2-veto-deadlock,advance,ledgers,validated,"3.0000 days: quorum 24, online 35, validated 64800, missed 0",64800,ledgers
+G2-veto-deadlock,advance,flag-ledgers,evaluated,253 flag ledgers evaluated (doVoting + fee vote),253,flag ledgers
+G2-veto-deadlock,veto,fixExample,vetoed,"vetoed by V19,V20,V21,V22,V23,V24,V25,V26,V27,V28,V29,V30",12,validators
+G2-veto-deadlock,advance,ledgers,validated,"7.0000 days: quorum 24, online 35, validated 151200, missed 0",151200,ledgers
+G2-veto-deadlock,advance,flag-ledgers,evaluated,590 flag ledgers evaluated (doVoting + fee vote),590,flag ledgers
+G2-veto-deadlock,unveto,fixExample,unvetoed,un-vetoed by V19,1,validators
+G2-veto-deadlock,advance,ledgers,validated,"11.0000 days: quorum 24, online 35, validated 237600, missed 0",237600,ledgers
+G2-veto-deadlock,advance,flag-ledgers,evaluated,929 flag ledgers evaluated (doVoting + fee vote),929,flag ledgers

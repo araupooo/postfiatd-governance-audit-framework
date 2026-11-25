@@ -1,0 +1,8 @@
+day 0.0000 ledger 1000000: amendment fixExample: up-voters set to 23 validators
+day 0.0000 ledger 1000000: advance 5.0000 days (108000 ledgers, 422 flag ledgers): quorum 24, online 35 — all validated
+day 5.0000 ledger 1108000: validators V24,V25,V26,V27,V28,V29,V30,V31,V32,V33,V34,V35 -> offline
+day 5.0000 ledger 1108000: advance 5.0000 days (108000 ledgers, 421 flag ledgers): quorum 24, online 23 — below quorum, 108000 ledgers missed (chain halts)
+day 5.0119 ledger 1108256: amendment fixExample tfGotMajority: support 23/23 threshold 15
+day 10.0000 ledger 1216000: validators V24,V25,V26,V27,V28,V29,V30,V31,V32,V33,V34,V35 -> online
+day 10.0000 ledger 1216000: advance 11.0000 days (237600 ledgers, 929 flag ledgers): quorum 24, online 35 — all validated
+day 10.0119 ledger 1216256: amendment fixExample tfLostMajority: support 23/35 after holding 5.0000 days; 14-day clock restarts

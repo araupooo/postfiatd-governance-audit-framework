@@ -1,0 +1,243 @@
+{
+  "config": {
+    "amendments": [
+      {
+        "name": "fixExample",
+        "vote_behavior": "DefaultNo"
+      }
+    ],
+    "majority_hold_days": 14,
+    "post_fix": true,
+    "publishers": [
+      "P1",
+      "P2",
+      "P3"
+    ],
+    "validators": 35
+  },
+  "events": [
+    {
+      "amendment": "fixExample",
+      "day": 5.011851851851867,
+      "event": "tfGotMajority",
+      "support": 23,
+      "threshold": 15,
+      "trusted_validations": 23
+    },
+    {
+      "amendment": "fixExample",
+      "day": 10.011851851851874,
+      "event": "tfLostMajority",
+      "held_days": 5.000000000000007,
+      "support": 23,
+      "trusted_validations": 35
+    }
+  ],
+  "final": {
+    "amendments": {
+      "fixExample": {
+        "enabled": false,
+        "enabled_day": null,
+        "got_majority_count": 1,
+        "has_code": true,
+        "lost_majority_count": 1,
+        "majority_since_day": null,
+        "support": 23,
+        "vetoed_by": []
+      }
+    },
+    "blocked_validators": [],
+    "counters": {
+      "amendments_enabled": 0,
+      "exclusions_applied": 0,
+      "fee_changes": 0,
+      "flag_ledgers": 1772,
+      "ledgers_missed": 108000,
+      "ledgers_validated": 345600,
+      "majority_restarts": 1,
+      "manifests_revoked": 0,
+      "manifests_rotated": 0,
+      "quorum_disabled_flag_ledgers": 0,
+      "replay_ledgers": 0,
+      "rollback_attempts": 0,
+      "rollback_failures": 0,
+      "validators_blocked": 0
+    },
+    "day": 21.0,
+    "exclusions": [],
+    "fees": {
+      "account_reserve_drops": 10000000,
+      "base_fee_drops": 10,
+      "owner_reserve_drops": 2000000
+    },
+    "ledger_seq": 1453600,
+    "online_trusted": 35,
+    "unl_size": 35,
+    "validation_quorum": 24
+  },
+  "label": "SIMULATED",
+  "pinned_commit": "0085a1ff885d6a446369cf73a4430f75af22be55",
+  "rows": [
+    {
+      "detail": "23 validators voting up",
+      "kind": "fixExample",
+      "op": "set_support",
+      "outcome": "set",
+      "scenario": "G1-quorum-failure-minority-majority",
+      "unit": "validators",
+      "value": 23
+    },
+    {
+      "detail": "5.0000 days: quorum 24, online 35, validated 108000, missed 0",
+      "kind": "ledgers",
+      "op": "advance",
+      "outcome": "validated",
+      "scenario": "G1-quorum-failure-minority-majority",
+      "unit": "ledgers",
+      "value": 108000
+    },
+    {
+      "detail": "422 flag ledgers evaluated (doVoting + fee vote)",
+      "kind": "flag-ledgers",
+      "op": "advance",
+      "outcome": "evaluated",
+      "scenario": "G1-quorum-failure-minority-majority",
+      "unit": "flag ledgers",
+      "value": 422
+    },
+    {
+      "detail": "12 validators -> offline",
+      "kind": "validators",
+      "op": "set_online",
+      "outcome": "offline",
+      "scenario": "G1-quorum-failure-minority-majority",
+      "unit": "validators",
+      "value": 12
+    },
+    {
+      "detail": "5.0000 days: quorum 24, online 23, validated 0, missed 108000",
+      "kind": "ledgers",
+      "op": "advance",
+      "outcome": "missed",
+      "scenario": "G1-quorum-failure-minority-majority",
+      "unit": "ledgers",
+      "value": 0
+    },
+    {
+      "detail": "421 flag ledgers evaluated (doVoting + fee vote)",
+      "kind": "flag-ledgers",
+      "op": "advance",
+      "outcome": "evaluated",
+      "scenario": "G1-quorum-failure-minority-majority",
+      "unit": "flag ledgers",
+      "value": 421
+    },
+    {
+      "detail": "12 validators -> online",
+      "kind": "validators",
+      "op": "set_online",
+      "outcome": "online",
+      "scenario": "G1-quorum-failure-minority-majority",
+      "unit": "validators",
+      "value": 12
+    },
+    {
+      "detail": "11.0000 days: quorum 24, online 35, validated 237600, missed 0",
+      "kind": "ledgers",
+      "op": "advance",
+      "outcome": "validated",
+      "scenario": "G1-quorum-failure-minority-majority",
+      "unit": "ledgers",
+      "value": 237600
+    },
+    {
+      "detail": "929 flag ledgers evaluated (doVoting + fee vote)",
+      "kind": "flag-ledgers",
+      "op": "advance",
+      "outcome": "evaluated",
+      "scenario": "G1-quorum-failure-minority-majority",
+      "unit": "flag ledgers",
+      "value": 929
+    }
+  ],
+  "scenario_id": "G1-quorum-failure-minority-majority",
+  "severity": "MEDIUM",
+  "severity_reason": "12 validators offline for 5 days: 108,000 ledgers missed (chain halts, 23 online < quorum 24). During the outage the threshold denominator shrank to the 23 validations received (threshold 15), so the 23-vote minority gained majority on day 5.0119; on recovery the bar returned to 24 and the majority was lost on day 10.0119 after holding 5.0 days \u2014 1 restart, never enabled.",
+  "steps": [
+    {
+      "amendment": "fixExample",
+      "op": "set_support",
+      "step": 0,
+      "up_voters": 23
+    },
+    {
+      "day": 5.0,
+      "flag_ledgers": 422,
+      "ledger_seq": 1108000,
+      "ledgers": 108000,
+      "online": 35,
+      "op": "advance",
+      "quorum": 24,
+      "step": 1
+    },
+    {
+      "online": false,
+      "op": "set_online",
+      "step": 2,
+      "validators": [
+        "V24",
+        "V25",
+        "V26",
+        "V27",
+        "V28",
+        "V29",
+        "V30",
+        "V31",
+        "V32",
+        "V33",
+        "V34",
+        "V35"
+      ]
+    },
+    {
+      "day": 10.0,
+      "flag_ledgers": 421,
+      "ledger_seq": 1216000,
+      "ledgers": 108000,
+      "online": 23,
+      "op": "advance",
+      "quorum": 24,
+      "step": 3
+    },
+    {
+      "online": true,
+      "op": "set_online",
+      "step": 4,
+      "validators": [
+        "V24",
+        "V25",
+        "V26",
+        "V27",
+        "V28",
+        "V29",
+        "V30",
+        "V31",
+        "V32",
+        "V33",
+        "V34",
+        "V35"
+      ]
+    },
+    {
+      "day": 21.0,
+      "flag_ledgers": 929,
+      "ledger_seq": 1453600,
+      "ledgers": 237600,
+      "online": 35,
+      "op": "advance",
+      "quorum": 24,
+      "step": 5
+    }
+  ],
+  "title": "Quorum failure: chain halts, and a 65.7% minority gains amendment majority during the outage"
+}

@@ -1,0 +1,154 @@
+[
+  {
+    "control_id": "C00",
+    "measurement": "G0: threshold 23 at 35 validations, 30 up > 23, enabled day 14.0207. G1: threshold shrinks to 15 at 23 validations, 23 up > 15, majority gained during the outage; on recovery threshold 23, 23 up is not > 23, majority lost. G2: 18-19 up never exceeds 23. G7: 22 up never exceeds 23 during the dip. G10: 30 up > 23. Effectiveness: 100% \u2014 the strict-> rule fired exactly as coded in every case.",
+    "name": "post-fix 67% amendment threshold (strict >)",
+    "scenarios": "G0,G1,G2,G7,G10",
+    "source": "SystemParameters.h:83-85; AmendmentTable.cpp:323-342, 360-378",
+    "status": "MEASURED"
+  },
+  {
+    "control_id": "C01",
+    "measurement": "G0: majority gained day 0.0119, enabled day 14.0207 (held 14.0088 days). G7: majority gained day 0.0119, lost after holding 12.0000 days, regained day 12.1119, enabled day 26.1207 \u2014 the 12.0000 banked days were lost. Effectiveness: 100% \u2014 enablement required the full hold after the last majority gain in both cases.",
+    "name": "2-week majority hold before enablement",
+    "scenarios": "G0,G7",
+    "source": "SystemParameters.h:88; Config.h:248; AmendmentTable.cpp:886-923",
+    "status": "MEASURED"
+  },
+  {
+    "control_id": "C02",
+    "measurement": "G0 ran 15 days = 324000 ledgers with 1265 flag ledgers evaluated (one doVoting + fee vote per flag ledger, 256-ledger spacing). Effectiveness: 100% \u2014 every flag ledger in the span was evaluated.",
+    "name": "flag-ledger voting cadence (every 256 ledgers)",
+    "scenarios": "G0",
+    "source": "Ledger.h:426; Ledger.cpp:970-985",
+    "status": "MEASURED"
+  },
+  {
+    "control_id": "C03",
+    "measurement": "G2: 12 validators vetoed fixExample on day 3; support fell 30 -> 18 and the amendment never reached majority over the remaining 18 days. One un-veto (V19) raised support to 19, still below the 24-vote bar. Vetoes persisted across the whole run. Effectiveness: 100%% \u2014 vetoes held until explicitly un-vetoed.",
+    "name": "veto by config ([veto_amendments]) with persisted vote",
+    "scenarios": "G2",
+    "source": "AmendmentTable.cpp:600-621, 736-762",
+    "status": "MEASURED"
+  },
+  {
+    "control_id": "C04",
+    "measurement": "G2: unknownFeature has no code in the assessed build; it never entered voting over 21 days (support 0, never enabled) while fixExample was voted on normally. Effectiveness: 100%% \u2014 the code-less amendment was excluded from voting.",
+    "name": "unknown amendment effectively vetoed",
+    "scenarios": "G2",
+    "source": "AmendmentTable.cpp:648",
+    "status": "MEASURED"
+  },
+  {
+    "control_id": "C05",
+    "measurement": "G4: fixCritical (DefaultYes) auto-voted up by all 35 validators with no explicit configuration and enabled day 14.0207. G0: fixExample (DefaultNo) stayed at 0 support until explicitly configured, then enabled. Effectiveness: 100% \u2014 the two behaviours differ exactly as documented.",
+    "name": "DefaultYes / DefaultNo vote behaviour",
+    "scenarios": "G0,G4",
+    "source": "features.macro:104; AmendmentDevelopment.md:60-90",
+    "status": "MEASURED"
+  },
+  {
+    "control_id": "C06",
+    "measurement": "G0: quorum 24 = max(ceil(35*0.67)=24, ceil(35*0.60)=21). G1: 23 online < 24, 108000 ledgers missed. G3: after revocation UNL 34, quorum 23 = max(ceil(34*0.67)=23, ceil(34*0.60)=21). G6: negative UNL cuts effective UNL to 32, quorum 22 = max(ceil(32*0.67)=22, ceil(35*0.60)=21). Effectiveness: 100% \u2014 the max() of the two terms governed in every case.",
+    "name": "67%% validation quorum with 60%% absolute floor",
+    "scenarios": "G0,G1,G3,G6",
+    "source": "ValidatorList.cpp:1898-1935",
+    "status": "MEASURED"
+  },
+  {
+    "control_id": "C07",
+    "measurement": "G6: with 1 of 3 publishers down (error threshold min(2, 3-2+1)=2) quorum held at 24. With 2 of 3 down, unavailable (2) reached the error threshold, quorum was disabled for 84 flag ledgers and 21600 ledgers were missed until a publisher returned. Effectiveness: 100% \u2014 the chain halted rather than lowering the quorum.",
+    "name": "quorum disabled when too many publishers are unavailable",
+    "scenarios": "G6",
+    "source": "ValidatorList.cpp:1861-1893",
+    "status": "MEASURED"
+  },
+  {
+    "control_id": "C08",
+    "measurement": "G6: 3 publishers -> threshold 2 (3/2+1). A validator needs 2 of 3 publisher lists to enter the trusted set. With 1 publisher down the lists were still usable; with 2 down the error threshold (2) was hit and quorum disabled (see C07). Effectiveness: 100%% \u2014 the threshold governed list usability exactly as coded.",
+    "name": "publisher listThreshold (1 if <3 publishers, else N/2+1)",
+    "scenarios": "G6",
+    "source": "ValidatorList.cpp:197-215",
+    "status": "MEASURED"
+  },
+  {
+    "control_id": "C09",
+    "measurement": "G3: V07 rotated its ephemeral signing key with one new manifest (sequence 1 -> 2); the validator kept validating with no interruption (1 manifests rotated). Effectiveness: 100% \u2014 rotation restored the validator in a single manifest.",
+    "name": "manifest rotation (higher sequence supersedes)",
+    "scenarios": "G3",
+    "source": "Manifest.h:44-76, 87-97",
+    "status": "MEASURED"
+  },
+  {
+    "control_id": "C10",
+    "measurement": "G3: V11's master key was revoked with one manifest at sequence 0xFFFFFFFF; the validator left the UNL (35 -> 34) and the quorum recomputed 24 -> 23. No further manifest for that master key can ever be accepted. Effectiveness: 100%% \u2014 revocation is permanent and immediate.",
+    "name": "master-key revocation (sequence 0xFFFFFFFF)",
+    "scenarios": "G3",
+    "source": "Manifest.h:133-141",
+    "status": "MEASURED"
+  },
+  {
+    "control_id": "C11",
+    "measurement": "G6: 3 validators marked unreliable lowered the effective UNL 35 -> 32 and the quorum 24 -> 22 (max(ceil(32*0.67)=22, ceil(35*0.60)=21)). The 25%% cap on listed validators (NegativeUNLVote.h:80) was not approached (3/35 = 8.6%%). Effectiveness: 100%% \u2014 the quorum tracked the effective UNL exactly.",
+    "name": "negative UNL (unreliable validators lower the effective UNL)",
+    "scenarios": "G6",
+    "source": "NegativeUNLVote.h:50-80; docs/0001-negative-unl/README.md",
+    "status": "MEASURED"
+  },
+  {
+    "control_id": "C12",
+    "measurement": "G6: exclusion vote with 24/35 agreement (>= ceil(35*0.67)=24) queued one account; 1 exclusion(s) applied at the documented rate of one per 10 ledgers. Effectiveness: 100% \u2014 the agreement bar and the application rate both held.",
+    "name": "validator exclusion (67%% agreement, one change per 10 ledgers)",
+    "scenarios": "G6",
+    "source": "docs/Exclusions.md:5, 41, 184, 191",
+    "status": "MEASURED"
+  },
+  {
+    "control_id": "C13",
+    "measurement": "G5: 12/12/11 split across 10/12/15 drops with target 12 \u2014 the 15-drop votes fell outside [current, target] and were discarded, the 10/12 tie kept the fee at 10. G8: 18/17 split on owner reserve kept 2 XRP; 17 silent validators counted as noVote. Total fee changes across both scenarios: 0. Coverage is PARTIAL: the vote moves only on a modal majority; a split field stalls even when a majority of voters want some change.",
+    "name": "fee vote (trusted-only, flag ledger, most-voted value)",
+    "scenarios": "G5,G8",
+    "source": "FeeVoteImpl.cpp:70-85, 196-280",
+    "status": "PARTIAL"
+  },
+  {
+    "control_id": "C14",
+    "measurement": "UNMEASURED \u2014 the harness submits no transactions, so no fee is collected or burned in any scenario. The invariant is OBSERVED only: the whitepaper states 'every native fee burns, no validator reward exists' (Abstract; section 1.1). The code path that destroys collected fees was not traced to a single function in this pack; do not cite this control as harness-verified.",
+    "name": "fee burn / no validator subsidy",
+    "scenarios": "",
+    "source": "whitepaper Abstract, section 1.1 (2026-11-25 fetch)",
+    "status": "UNMEASURED"
+  },
+  {
+    "control_id": "C15",
+    "measurement": "UNMEASURED \u2014 no treasury mechanism exists to exercise: exhaustive search of the pinned checkout ('treasury', case-insensitive, all of src/) returned 0 files, and the live whitepaper (677 lines, fetched 2026-11-25) contains 0 occurrences. G5 documents the gap: fee votes are the only economic control. This is a verified absence, not a harness measurement.",
+    "name": "treasury control",
+    "scenarios": "G5",
+    "source": "ABSENT \u2014 0 hits for 'treasury' in src/ and 0 hits in the whitepaper (2026-11-25 fetch)",
+    "status": "UNMEASURED"
+  },
+  {
+    "control_id": "C16",
+    "measurement": "G4: the critical-fix binary rolled out validator by validator (max-parallel 1); 5 validators never upgraded and became amendment-blocked. G9: the same rollout left 5 validators blocked while the network kept validating (30 online >= quorum 24). Effectiveness: 100%% \u2014 sequential rollout preserved quorum throughout; the residual risk is operators who never upgrade at all (see C17).",
+    "name": "sequential validator rollout (max-parallel 1)",
+    "scenarios": "G4,G9",
+    "source": "docs/DeploymentWorkflows.md:18, 85, 102-104",
+    "status": "MEASURED"
+  },
+  {
+    "control_id": "C17",
+    "measurement": "G4: 5 validators on old binaries became blocked when fixCritical enabled; they stopped validating and voting. G9: 5 blocked validators reduced the safety margin from 11 to 6 (30 online - quorum 24), while a second amendment still enabled on the remaining 30 votes. Effectiveness: 100%% \u2014 blocked validators were excluded from validation and voting exactly as documented.",
+    "name": "amendment-blocked enforcement",
+    "scenarios": "G4,G9",
+    "source": "AmendmentTable.cpp:648, 1013-1015; xrpl.org Amendments ('Amendment Blocked Servers')",
+    "status": "MEASURED"
+  },
+  {
+    "control_id": "C18",
+    "measurement": "UNMEASURED \u2014 no rollback control exists to exercise: G4's rollback attempt on the enabled fixCritical failed (1 attempt, 1 failures) and per-node ledger replay of 100 ledgers re-executed history without changing the enabled amendment. No primary source describing a rolled-back activated amendment was found (searched, not found). This is a verified absence, not a harness measurement.",
+    "name": "amendment rollback",
+    "scenarios": "G4",
+    "source": "ABSENT \u2014 no rollback path in code; xrpl.org Amendments ('Disabling a passed amendment requires a new amendment to do so')",
+    "status": "UNMEASURED"
+  }
+]

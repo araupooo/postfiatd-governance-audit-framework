@@ -1,0 +1,10 @@
+scenario,op,kind,outcome,detail,value,unit
+G1-quorum-failure-minority-majority,set_support,fixExample,set,23 validators voting up,23,validators
+G1-quorum-failure-minority-majority,advance,ledgers,validated,"5.0000 days: quorum 24, online 35, validated 108000, missed 0",108000,ledgers
+G1-quorum-failure-minority-majority,advance,flag-ledgers,evaluated,422 flag ledgers evaluated (doVoting + fee vote),422,flag ledgers
+G1-quorum-failure-minority-majority,set_online,validators,offline,12 validators -> offline,12,validators
+G1-quorum-failure-minority-majority,advance,ledgers,missed,"5.0000 days: quorum 24, online 23, validated 0, missed 108000",0,ledgers
+G1-quorum-failure-minority-majority,advance,flag-ledgers,evaluated,421 flag ledgers evaluated (doVoting + fee vote),421,flag ledgers
+G1-quorum-failure-minority-majority,set_online,validators,online,12 validators -> online,12,validators
+G1-quorum-failure-minority-majority,advance,ledgers,validated,"11.0000 days: quorum 24, online 35, validated 237600, missed 0",237600,ledgers
+G1-quorum-failure-minority-majority,advance,flag-ledgers,evaluated,929 flag ledgers evaluated (doVoting + fee vote),929,flag ledgers
