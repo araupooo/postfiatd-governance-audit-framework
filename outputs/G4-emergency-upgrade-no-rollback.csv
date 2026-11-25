@@ -1,0 +1,8 @@
+scenario,op,kind,outcome,detail,value,unit
+G4-emergency-upgrade-no-rollback,advance,ledgers,validated,"15.0000 days: quorum 24, online 35, validated 324000, missed 0",324000,ledgers
+G4-emergency-upgrade-no-rollback,advance,flag-ledgers,evaluated,1265 flag ledgers evaluated (doVoting + fee vote),1265,flag ledgers
+G4-emergency-upgrade-no-rollback,set_binary,validators,old-binary,5 validators on old binary,5,validators
+G4-emergency-upgrade-no-rollback,advance,ledgers,validated,"1.0000 days: quorum 24, online 30, validated 21600, missed 0",21600,ledgers
+G4-emergency-upgrade-no-rollback,advance,flag-ledgers,evaluated,85 flag ledgers evaluated (doVoting + fee vote),85,flag ledgers
+G4-emergency-upgrade-no-rollback,rollback_attempt,fixCritical,failed,no in-protocol rollback path,0,attempts
+G4-emergency-upgrade-no-rollback,ledger_replay,replay,replayed,100 ledgers re-executed on one node; enabled amendments unchanged,100,ledgers

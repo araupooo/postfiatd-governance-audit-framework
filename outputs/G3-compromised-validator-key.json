@@ -1,0 +1,141 @@
+{
+  "config": {
+    "amendments": [],
+    "majority_hold_days": 14,
+    "post_fix": true,
+    "publishers": [
+      "P1",
+      "P2",
+      "P3"
+    ],
+    "validators": 35
+  },
+  "events": [],
+  "final": {
+    "amendments": {},
+    "blocked_validators": [],
+    "counters": {
+      "amendments_enabled": 0,
+      "exclusions_applied": 0,
+      "fee_changes": 0,
+      "flag_ledgers": 590,
+      "ledgers_missed": 0,
+      "ledgers_validated": 151200,
+      "majority_restarts": 0,
+      "manifests_revoked": 1,
+      "manifests_rotated": 1,
+      "quorum_disabled_flag_ledgers": 0,
+      "replay_ledgers": 0,
+      "rollback_attempts": 0,
+      "rollback_failures": 0,
+      "validators_blocked": 0
+    },
+    "day": 7.0,
+    "exclusions": [],
+    "fees": {
+      "account_reserve_drops": 10000000,
+      "base_fee_drops": 10,
+      "owner_reserve_drops": 2000000
+    },
+    "ledger_seq": 1151200,
+    "online_trusted": 34,
+    "unl_size": 34,
+    "validation_quorum": 23
+  },
+  "label": "SIMULATED",
+  "pinned_commit": "0085a1ff885d6a446369cf73a4430f75af22be55",
+  "rows": [
+    {
+      "detail": "new ephemeral key, sequence 2",
+      "kind": "V07",
+      "op": "rotate_manifest",
+      "outcome": "rotated",
+      "scenario": "G3-compromised-validator-key",
+      "unit": "sequence",
+      "value": 2
+    },
+    {
+      "detail": "2.0000 days: quorum 24, online 35, validated 43200, missed 0",
+      "kind": "ledgers",
+      "op": "advance",
+      "outcome": "validated",
+      "scenario": "G3-compromised-validator-key",
+      "unit": "ledgers",
+      "value": 43200
+    },
+    {
+      "detail": "168 flag ledgers evaluated (doVoting + fee vote)",
+      "kind": "flag-ledgers",
+      "op": "advance",
+      "outcome": "evaluated",
+      "scenario": "G3-compromised-validator-key",
+      "unit": "flag ledgers",
+      "value": 168
+    },
+    {
+      "detail": "master key revoked, sequence 0xFFFFFFFF",
+      "kind": "V11",
+      "op": "revoke_manifest",
+      "outcome": "revoked",
+      "scenario": "G3-compromised-validator-key",
+      "unit": "sequence",
+      "value": 4294967295
+    },
+    {
+      "detail": "5.0000 days: quorum 23, online 34, validated 108000, missed 0",
+      "kind": "ledgers",
+      "op": "advance",
+      "outcome": "validated",
+      "scenario": "G3-compromised-validator-key",
+      "unit": "ledgers",
+      "value": 108000
+    },
+    {
+      "detail": "422 flag ledgers evaluated (doVoting + fee vote)",
+      "kind": "flag-ledgers",
+      "op": "advance",
+      "outcome": "evaluated",
+      "scenario": "G3-compromised-validator-key",
+      "unit": "flag ledgers",
+      "value": 422
+    }
+  ],
+  "scenario_id": "G3-compromised-validator-key",
+  "severity": "LOW",
+  "severity_reason": "V07 signing-key compromise recovered by 1 manifest rotation (sequence 1 -> 2) with no validation interruption. V11 master-key compromise required 1 revocation manifest (sequence 0xFFFFFFFF); the validator left the UNL (35 -> 34) and the quorum recomputed 24 -> 23.",
+  "steps": [
+    {
+      "op": "rotate_manifest",
+      "sequence": 2,
+      "step": 0,
+      "validator": "V07"
+    },
+    {
+      "day": 2.0,
+      "flag_ledgers": 168,
+      "ledger_seq": 1043200,
+      "ledgers": 43200,
+      "online": 35,
+      "op": "advance",
+      "quorum": 24,
+      "step": 1
+    },
+    {
+      "op": "revoke_manifest",
+      "sequence": 4294967295,
+      "step": 2,
+      "validator": "V11"
+    },
+    {
+      "day": 7.0,
+      "flag_ledgers": 422,
+      "ledger_seq": 1151200,
+      "ledgers": 108000,
+      "online": 34,
+      "op": "advance",
+      "quorum": 23,
+      "step": 3
+    }
+  ],
+  "title": "Compromised validator key: manifest rotation recovers a signing key, revocation removes a master key"
+}

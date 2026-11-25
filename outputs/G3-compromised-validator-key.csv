@@ -1,0 +1,7 @@
+scenario,op,kind,outcome,detail,value,unit
+G3-compromised-validator-key,rotate_manifest,V07,rotated,"new ephemeral key, sequence 2",2,sequence
+G3-compromised-validator-key,advance,ledgers,validated,"2.0000 days: quorum 24, online 35, validated 43200, missed 0",43200,ledgers
+G3-compromised-validator-key,advance,flag-ledgers,evaluated,168 flag ledgers evaluated (doVoting + fee vote),168,flag ledgers
+G3-compromised-validator-key,revoke_manifest,V11,revoked,"master key revoked, sequence 0xFFFFFFFF",4294967295,sequence
+G3-compromised-validator-key,advance,ledgers,validated,"5.0000 days: quorum 23, online 34, validated 108000, missed 0",108000,ledgers
+G3-compromised-validator-key,advance,flag-ledgers,evaluated,422 flag ledgers evaluated (doVoting + fee vote),422,flag ledgers

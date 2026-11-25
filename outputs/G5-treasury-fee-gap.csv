@@ -1,0 +1,5 @@
+scenario,op,kind,outcome,detail,value,unit
+G5-treasury-fee-gap,fee_target,base_fee_drops,target-set,operator target base_fee_drops = 12,12,drops
+G5-treasury-fee-gap,fee_votes,base_fee_drops,votes-cast,"votes {'10': 12, '12': 12, '15': 11}",35,votes
+G5-treasury-fee-gap,advance,ledgers,validated,"2.0000 days: quorum 24, online 35, validated 43200, missed 0",43200,ledgers
+G5-treasury-fee-gap,advance,flag-ledgers,evaluated,168 flag ledgers evaluated (doVoting + fee vote),168,flag ledgers

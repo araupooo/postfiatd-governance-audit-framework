@@ -1,0 +1,2 @@
+day 0.0000 ledger 1000000: fee votes base_fee_drops: {'10': 12, '12': 12, '15': 11}
+day 0.0000 ledger 1000000: advance 2.0000 days (43200 ledgers, 168 flag ledgers): quorum 24, online 35 — all validated

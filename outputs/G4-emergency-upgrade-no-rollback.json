@@ -1,0 +1,199 @@
+{
+  "config": {
+    "amendments": [
+      {
+        "name": "fixCritical",
+        "vote_behavior": "DefaultYes"
+      }
+    ],
+    "majority_hold_days": 14,
+    "post_fix": true,
+    "publishers": [
+      "P1",
+      "P2",
+      "P3"
+    ],
+    "validators": 35
+  },
+  "events": [
+    {
+      "amendment": "fixCritical",
+      "day": 0.011851851851851851,
+      "event": "tfGotMajority",
+      "support": 35,
+      "threshold": 23,
+      "trusted_validations": 35
+    },
+    {
+      "amendment": "fixCritical",
+      "day": 14.020740740740587,
+      "event": "enabled",
+      "support": 35,
+      "trusted_validations": 35
+    }
+  ],
+  "final": {
+    "amendments": {
+      "fixCritical": {
+        "enabled": true,
+        "enabled_day": 14.0207,
+        "got_majority_count": 1,
+        "has_code": true,
+        "lost_majority_count": 0,
+        "majority_since_day": 0.0119,
+        "support": 35,
+        "vetoed_by": []
+      }
+    },
+    "blocked_validators": [
+      "V31",
+      "V32",
+      "V33",
+      "V34",
+      "V35"
+    ],
+    "counters": {
+      "amendments_enabled": 1,
+      "exclusions_applied": 0,
+      "fee_changes": 0,
+      "flag_ledgers": 1350,
+      "ledgers_missed": 0,
+      "ledgers_validated": 345600,
+      "majority_restarts": 0,
+      "manifests_revoked": 0,
+      "manifests_rotated": 0,
+      "quorum_disabled_flag_ledgers": 0,
+      "replay_ledgers": 100,
+      "rollback_attempts": 1,
+      "rollback_failures": 1,
+      "validators_blocked": 0
+    },
+    "day": 16.0,
+    "exclusions": [],
+    "fees": {
+      "account_reserve_drops": 10000000,
+      "base_fee_drops": 10,
+      "owner_reserve_drops": 2000000
+    },
+    "ledger_seq": 1345600,
+    "online_trusted": 30,
+    "unl_size": 35,
+    "validation_quorum": 24
+  },
+  "label": "SIMULATED",
+  "pinned_commit": "0085a1ff885d6a446369cf73a4430f75af22be55",
+  "rows": [
+    {
+      "detail": "15.0000 days: quorum 24, online 35, validated 324000, missed 0",
+      "kind": "ledgers",
+      "op": "advance",
+      "outcome": "validated",
+      "scenario": "G4-emergency-upgrade-no-rollback",
+      "unit": "ledgers",
+      "value": 324000
+    },
+    {
+      "detail": "1265 flag ledgers evaluated (doVoting + fee vote)",
+      "kind": "flag-ledgers",
+      "op": "advance",
+      "outcome": "evaluated",
+      "scenario": "G4-emergency-upgrade-no-rollback",
+      "unit": "flag ledgers",
+      "value": 1265
+    },
+    {
+      "detail": "5 validators on old binary",
+      "kind": "validators",
+      "op": "set_binary",
+      "outcome": "old-binary",
+      "scenario": "G4-emergency-upgrade-no-rollback",
+      "unit": "validators",
+      "value": 5
+    },
+    {
+      "detail": "1.0000 days: quorum 24, online 30, validated 21600, missed 0",
+      "kind": "ledgers",
+      "op": "advance",
+      "outcome": "validated",
+      "scenario": "G4-emergency-upgrade-no-rollback",
+      "unit": "ledgers",
+      "value": 21600
+    },
+    {
+      "detail": "85 flag ledgers evaluated (doVoting + fee vote)",
+      "kind": "flag-ledgers",
+      "op": "advance",
+      "outcome": "evaluated",
+      "scenario": "G4-emergency-upgrade-no-rollback",
+      "unit": "flag ledgers",
+      "value": 85
+    },
+    {
+      "detail": "no in-protocol rollback path",
+      "kind": "fixCritical",
+      "op": "rollback_attempt",
+      "outcome": "failed",
+      "scenario": "G4-emergency-upgrade-no-rollback",
+      "unit": "attempts",
+      "value": 0
+    },
+    {
+      "detail": "100 ledgers re-executed on one node; enabled amendments unchanged",
+      "kind": "replay",
+      "op": "ledger_replay",
+      "outcome": "replayed",
+      "scenario": "G4-emergency-upgrade-no-rollback",
+      "unit": "ledgers",
+      "value": 100
+    }
+  ],
+  "scenario_id": "G4-emergency-upgrade-no-rollback",
+  "severity": "HIGH",
+  "severity_reason": "A DefaultYes critical fix needs the full 14-day hold (enabled day 14.0207) \u2014 too slow for an active exploit, so the emergency path is a binary upgrade; 5 validators never upgraded and became amendment-blocked. The rollback attempt failed (1 attempt, 1 failure): no in-protocol path exists. Per-node replay of 100 ledgers re-executed history without changing the enabled amendment.",
+  "steps": [
+    {
+      "day": 15.0,
+      "flag_ledgers": 1265,
+      "ledger_seq": 1324000,
+      "ledgers": 324000,
+      "online": 35,
+      "op": "advance",
+      "quorum": 24,
+      "step": 0
+    },
+    {
+      "has_new_binary": false,
+      "op": "set_binary",
+      "step": 1,
+      "validators": [
+        "V31",
+        "V32",
+        "V33",
+        "V34",
+        "V35"
+      ]
+    },
+    {
+      "day": 16.0,
+      "flag_ledgers": 85,
+      "ledger_seq": 1345600,
+      "ledgers": 21600,
+      "online": 30,
+      "op": "advance",
+      "quorum": 24,
+      "step": 2
+    },
+    {
+      "amendment": "fixCritical",
+      "op": "rollback_attempt",
+      "rolled_back": false,
+      "step": 3
+    },
+    {
+      "ledgers": 100,
+      "op": "ledger_replay",
+      "step": 4
+    }
+  ],
+  "title": "Emergency upgrade: the 14-day amendment wait is too slow, and an enabled amendment cannot be rolled back"
+}

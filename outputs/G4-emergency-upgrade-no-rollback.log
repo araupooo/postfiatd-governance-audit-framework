@@ -1,0 +1,7 @@
+day 0.0000 ledger 1000000: advance 15.0000 days (324000 ledgers, 1265 flag ledgers): quorum 24, online 35 — all validated
+day 0.0119 ledger 1000256: amendment fixCritical tfGotMajority: support 35/35 threshold 23
+day 14.0207 ledger 1302848: amendment fixCritical ENABLED: support 35/35 held 14.0089 days (hold 14.0000)
+day 15.0000 ledger 1324000: validators V31,V32,V33,V34,V35 binary -> old (no code for new amendments)
+day 15.0000 ledger 1324000: advance 1.0000 days (21600 ledgers, 85 flag ledgers): quorum 24, online 30 — all validated
+day 16.0000 ledger 1345600: rollback attempt on fixCritical: FAILED — no in-protocol rollback path; disabling a passed amendment requires a new amendment
+day 16.0000 ledger 1345600: ledger replay: 100 ledgers re-executed on this node only; enabled amendments unchanged

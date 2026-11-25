@@ -1,0 +1,117 @@
+{
+  "config": {
+    "amendments": [],
+    "majority_hold_days": 14,
+    "post_fix": true,
+    "publishers": [
+      "P1",
+      "P2",
+      "P3"
+    ],
+    "validators": 35
+  },
+  "events": [],
+  "final": {
+    "amendments": {},
+    "blocked_validators": [],
+    "counters": {
+      "amendments_enabled": 0,
+      "exclusions_applied": 0,
+      "fee_changes": 0,
+      "flag_ledgers": 168,
+      "ledgers_missed": 0,
+      "ledgers_validated": 43200,
+      "majority_restarts": 0,
+      "manifests_revoked": 0,
+      "manifests_rotated": 0,
+      "quorum_disabled_flag_ledgers": 0,
+      "replay_ledgers": 0,
+      "rollback_attempts": 0,
+      "rollback_failures": 0,
+      "validators_blocked": 0
+    },
+    "day": 2.0,
+    "exclusions": [],
+    "fees": {
+      "account_reserve_drops": 10000000,
+      "base_fee_drops": 10,
+      "owner_reserve_drops": 2000000
+    },
+    "ledger_seq": 1043200,
+    "online_trusted": 35,
+    "unl_size": 35,
+    "validation_quorum": 24
+  },
+  "label": "SIMULATED",
+  "pinned_commit": "0085a1ff885d6a446369cf73a4430f75af22be55",
+  "rows": [
+    {
+      "detail": "operator target base_fee_drops = 12",
+      "kind": "base_fee_drops",
+      "op": "fee_target",
+      "outcome": "target-set",
+      "scenario": "G5-treasury-fee-gap",
+      "unit": "drops",
+      "value": 12
+    },
+    {
+      "detail": "votes {'10': 12, '12': 12, '15': 11}",
+      "kind": "base_fee_drops",
+      "op": "fee_votes",
+      "outcome": "votes-cast",
+      "scenario": "G5-treasury-fee-gap",
+      "unit": "votes",
+      "value": 35
+    },
+    {
+      "detail": "2.0000 days: quorum 24, online 35, validated 43200, missed 0",
+      "kind": "ledgers",
+      "op": "advance",
+      "outcome": "validated",
+      "scenario": "G5-treasury-fee-gap",
+      "unit": "ledgers",
+      "value": 43200
+    },
+    {
+      "detail": "168 flag ledgers evaluated (doVoting + fee vote)",
+      "kind": "flag-ledgers",
+      "op": "advance",
+      "outcome": "evaluated",
+      "scenario": "G5-treasury-fee-gap",
+      "unit": "flag ledgers",
+      "value": 168
+    }
+  ],
+  "scenario_id": "G5-treasury-fee-gap",
+  "severity": "MEDIUM",
+  "severity_reason": "No treasury control exists (0 hits in code, 0 in the whitepaper) \u2014 fee votes are the only economic control. The fee vote split 12/12/11 across 10/12/15 drops with target 12: the 15-drop votes fell outside [current, target] and were discarded, the 10/12 tie kept the fee at 10 drops; 0 fee changes.",
+  "steps": [
+    {
+      "field": "base_fee_drops",
+      "op": "fee_target",
+      "step": 0,
+      "value": 12
+    },
+    {
+      "distribution": {
+        "10": 12,
+        "12": 12,
+        "15": 11
+      },
+      "field": "base_fee_drops",
+      "op": "fee_votes",
+      "step": 1
+    },
+    {
+      "day": 2.0,
+      "flag_ledgers": 168,
+      "ledger_seq": 1043200,
+      "ledgers": 43200,
+      "online": 35,
+      "op": "advance",
+      "quorum": 24,
+      "step": 2
+    }
+  ],
+  "title": "Treasury and fee controls: no treasury exists; a split fee vote changes nothing"
+}

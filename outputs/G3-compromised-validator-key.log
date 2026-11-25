@@ -1,0 +1,4 @@
+day 0.0000 ledger 1000000: validator V07 manifest rotated: new ephemeral key, sequence 2
+day 0.0000 ledger 1000000: advance 2.0000 days (43200 ledgers, 168 flag ledgers): quorum 24, online 35 — all validated
+day 2.0000 ledger 1043200: validator V11 master key REVOKED: manifest sequence 0xFFFFFFFF; validator leaves the UNL
+day 2.0000 ledger 1043200: advance 5.0000 days (108000 ledgers, 422 flag ledgers): quorum 23, online 34 — all validated
