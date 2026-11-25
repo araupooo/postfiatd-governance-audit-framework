@@ -1,0 +1,16 @@
+scenario,op,kind,outcome,detail,value,unit
+G6-publisher-churn-negative-unl,advance,ledgers,validated,"4.0000 days: quorum 24, online 35, validated 86400, missed 0",86400,ledgers
+G6-publisher-churn-negative-unl,advance,flag-ledgers,evaluated,337 flag ledgers evaluated (doVoting + fee vote),337,flag ledgers
+G6-publisher-churn-negative-unl,set_publisher,P2,unavailable,publisher P2 -> unavailable,0,available
+G6-publisher-churn-negative-unl,advance,ledgers,validated,"4.0000 days: quorum 24, online 35, validated 86400, missed 0",86400,ledgers
+G6-publisher-churn-negative-unl,advance,flag-ledgers,evaluated,338 flag ledgers evaluated (doVoting + fee vote),338,flag ledgers
+G6-publisher-churn-negative-unl,set_publisher,P3,unavailable,publisher P3 -> unavailable,0,available
+G6-publisher-churn-negative-unl,advance,ledgers,missed,"1.0000 days: quorum None, online 35, validated 0, missed 21600",0,ledgers
+G6-publisher-churn-negative-unl,advance,flag-ledgers,evaluated,84 flag ledgers evaluated (doVoting + fee vote),84,flag ledgers
+G6-publisher-churn-negative-unl,set_publisher,P2,available,publisher P2 -> available,1,available
+G6-publisher-churn-negative-unl,advance,ledgers,validated,"2.0000 days: quorum 24, online 35, validated 43200, missed 0",43200,ledgers
+G6-publisher-churn-negative-unl,advance,flag-ledgers,evaluated,169 flag ledgers evaluated (doVoting + fee vote),169,flag ledgers
+G6-publisher-churn-negative-unl,mark_unreliable,validators,marked-unreliable,3 validators marked unreliable (negative UNL),3,validators
+G6-publisher-churn-negative-unl,exclusion_vote,rTestExcludedAccount,queued,24 validators agree to exclude rTestExcludedAccount,24,validators
+G6-publisher-churn-negative-unl,advance,ledgers,validated,"1.0000 days: quorum 22, online 35, validated 21600, missed 0",21600,ledgers
+G6-publisher-churn-negative-unl,advance,flag-ledgers,evaluated,84 flag ledgers evaluated (doVoting + fee vote),84,flag ledgers

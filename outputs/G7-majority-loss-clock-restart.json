@@ -1,0 +1,232 @@
+{
+  "config": {
+    "amendments": [
+      {
+        "name": "fixExample",
+        "vote_behavior": "DefaultNo"
+      }
+    ],
+    "majority_hold_days": 14,
+    "post_fix": true,
+    "publishers": [
+      "P1",
+      "P2",
+      "P3"
+    ],
+    "validators": 35
+  },
+  "events": [
+    {
+      "amendment": "fixExample",
+      "day": 0.011851851851851851,
+      "event": "tfGotMajority",
+      "support": 30,
+      "threshold": 23,
+      "trusted_validations": 35
+    },
+    {
+      "amendment": "fixExample",
+      "day": 12.011851851851786,
+      "event": "tfLostMajority",
+      "held_days": 11.999999999999934,
+      "support": 22,
+      "trusted_validations": 35
+    },
+    {
+      "amendment": "fixExample",
+      "day": 12.111851851851782,
+      "event": "tfGotMajority",
+      "support": 30,
+      "threshold": 23,
+      "trusted_validations": 35
+    },
+    {
+      "amendment": "fixExample",
+      "day": 26.12074074074006,
+      "event": "enabled",
+      "support": 30,
+      "trusted_validations": 35
+    }
+  ],
+  "final": {
+    "amendments": {
+      "fixExample": {
+        "enabled": true,
+        "enabled_day": 26.1207,
+        "got_majority_count": 2,
+        "has_code": true,
+        "lost_majority_count": 1,
+        "majority_since_day": 12.1119,
+        "support": 30,
+        "vetoed_by": []
+      }
+    },
+    "blocked_validators": [],
+    "counters": {
+      "amendments_enabled": 1,
+      "exclusions_applied": 0,
+      "fee_changes": 0,
+      "flag_ledgers": 2286,
+      "ledgers_missed": 0,
+      "ledgers_validated": 585360,
+      "majority_restarts": 1,
+      "manifests_revoked": 0,
+      "manifests_rotated": 0,
+      "quorum_disabled_flag_ledgers": 0,
+      "replay_ledgers": 0,
+      "rollback_attempts": 0,
+      "rollback_failures": 0,
+      "validators_blocked": 0
+    },
+    "day": 27.1,
+    "exclusions": [],
+    "fees": {
+      "account_reserve_drops": 10000000,
+      "base_fee_drops": 10,
+      "owner_reserve_drops": 2000000
+    },
+    "ledger_seq": 1585360,
+    "online_trusted": 35,
+    "unl_size": 35,
+    "validation_quorum": 24
+  },
+  "label": "SIMULATED",
+  "pinned_commit": "0085a1ff885d6a446369cf73a4430f75af22be55",
+  "rows": [
+    {
+      "detail": "30 validators voting up",
+      "kind": "fixExample",
+      "op": "set_support",
+      "outcome": "set",
+      "scenario": "G7-majority-loss-clock-restart",
+      "unit": "validators",
+      "value": 30
+    },
+    {
+      "detail": "12.0000 days: quorum 24, online 35, validated 259200, missed 0",
+      "kind": "ledgers",
+      "op": "advance",
+      "outcome": "validated",
+      "scenario": "G7-majority-loss-clock-restart",
+      "unit": "ledgers",
+      "value": 259200
+    },
+    {
+      "detail": "1012 flag ledgers evaluated (doVoting + fee vote)",
+      "kind": "flag-ledgers",
+      "op": "advance",
+      "outcome": "evaluated",
+      "scenario": "G7-majority-loss-clock-restart",
+      "unit": "flag ledgers",
+      "value": 1012
+    },
+    {
+      "detail": "22 validators voting up",
+      "kind": "fixExample",
+      "op": "set_support",
+      "outcome": "set",
+      "scenario": "G7-majority-loss-clock-restart",
+      "unit": "validators",
+      "value": 22
+    },
+    {
+      "detail": "0.1000 days: quorum 24, online 35, validated 2160, missed 0",
+      "kind": "ledgers",
+      "op": "advance",
+      "outcome": "validated",
+      "scenario": "G7-majority-loss-clock-restart",
+      "unit": "ledgers",
+      "value": 2160
+    },
+    {
+      "detail": "9 flag ledgers evaluated (doVoting + fee vote)",
+      "kind": "flag-ledgers",
+      "op": "advance",
+      "outcome": "evaluated",
+      "scenario": "G7-majority-loss-clock-restart",
+      "unit": "flag ledgers",
+      "value": 9
+    },
+    {
+      "detail": "30 validators voting up",
+      "kind": "fixExample",
+      "op": "set_support",
+      "outcome": "set",
+      "scenario": "G7-majority-loss-clock-restart",
+      "unit": "validators",
+      "value": 30
+    },
+    {
+      "detail": "15.0000 days: quorum 24, online 35, validated 324000, missed 0",
+      "kind": "ledgers",
+      "op": "advance",
+      "outcome": "validated",
+      "scenario": "G7-majority-loss-clock-restart",
+      "unit": "ledgers",
+      "value": 324000
+    },
+    {
+      "detail": "1265 flag ledgers evaluated (doVoting + fee vote)",
+      "kind": "flag-ledgers",
+      "op": "advance",
+      "outcome": "evaluated",
+      "scenario": "G7-majority-loss-clock-restart",
+      "unit": "flag ledgers",
+      "value": 1265
+    }
+  ],
+  "scenario_id": "G7-majority-loss-clock-restart",
+  "severity": "MEDIUM",
+  "severity_reason": "Majority held 12.0 days, then a dip to 22/35 support for one flag-ledger interval lost the majority; the 14-day clock restarted and the amendment enabled day 26.1207 \u2014 12.1 days later than the day-14.0207 baseline. A ~2-hour dip cost the 12 banked days.",
+  "steps": [
+    {
+      "amendment": "fixExample",
+      "op": "set_support",
+      "step": 0,
+      "up_voters": 30
+    },
+    {
+      "day": 12.0,
+      "flag_ledgers": 1012,
+      "ledger_seq": 1259200,
+      "ledgers": 259200,
+      "online": 35,
+      "op": "advance",
+      "quorum": 24,
+      "step": 1
+    },
+    {
+      "amendment": "fixExample",
+      "op": "set_support",
+      "step": 2,
+      "up_voters": 22
+    },
+    {
+      "day": 12.1,
+      "flag_ledgers": 9,
+      "ledger_seq": 1261360,
+      "ledgers": 2160,
+      "online": 35,
+      "op": "advance",
+      "quorum": 24,
+      "step": 3
+    },
+    {
+      "amendment": "fixExample",
+      "op": "set_support",
+      "step": 4,
+      "up_voters": 30
+    },
+    {
+      "day": 27.1,
+      "flag_ledgers": 1265,
+      "ledger_seq": 1585360,
+      "ledgers": 324000,
+      "online": 35,
+      "op": "advance",
+      "quorum": 24,
+      "step": 5
+    }
+  ],
+  "title": "Majority-loss clock restart: a 2-hour dip costs 12 days"
+}

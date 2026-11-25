@@ -1,0 +1,276 @@
+{
+  "config": {
+    "amendments": [],
+    "majority_hold_days": 14,
+    "post_fix": true,
+    "publishers": [
+      "P1",
+      "P2",
+      "P3"
+    ],
+    "validators": 35
+  },
+  "events": [],
+  "final": {
+    "amendments": {},
+    "blocked_validators": [],
+    "counters": {
+      "amendments_enabled": 0,
+      "exclusions_applied": 1,
+      "fee_changes": 0,
+      "flag_ledgers": 1012,
+      "ledgers_missed": 21600,
+      "ledgers_validated": 237600,
+      "majority_restarts": 0,
+      "manifests_revoked": 0,
+      "manifests_rotated": 0,
+      "quorum_disabled_flag_ledgers": 84,
+      "replay_ledgers": 0,
+      "rollback_attempts": 0,
+      "rollback_failures": 0,
+      "validators_blocked": 0
+    },
+    "day": 12.0,
+    "exclusions": [
+      "rTestExcludedAccount"
+    ],
+    "fees": {
+      "account_reserve_drops": 10000000,
+      "base_fee_drops": 10,
+      "owner_reserve_drops": 2000000
+    },
+    "ledger_seq": 1259200,
+    "online_trusted": 35,
+    "unl_size": 35,
+    "validation_quorum": 22
+  },
+  "label": "SIMULATED",
+  "pinned_commit": "0085a1ff885d6a446369cf73a4430f75af22be55",
+  "rows": [
+    {
+      "detail": "4.0000 days: quorum 24, online 35, validated 86400, missed 0",
+      "kind": "ledgers",
+      "op": "advance",
+      "outcome": "validated",
+      "scenario": "G6-publisher-churn-negative-unl",
+      "unit": "ledgers",
+      "value": 86400
+    },
+    {
+      "detail": "337 flag ledgers evaluated (doVoting + fee vote)",
+      "kind": "flag-ledgers",
+      "op": "advance",
+      "outcome": "evaluated",
+      "scenario": "G6-publisher-churn-negative-unl",
+      "unit": "flag ledgers",
+      "value": 337
+    },
+    {
+      "detail": "publisher P2 -> unavailable",
+      "kind": "P2",
+      "op": "set_publisher",
+      "outcome": "unavailable",
+      "scenario": "G6-publisher-churn-negative-unl",
+      "unit": "available",
+      "value": 0
+    },
+    {
+      "detail": "4.0000 days: quorum 24, online 35, validated 86400, missed 0",
+      "kind": "ledgers",
+      "op": "advance",
+      "outcome": "validated",
+      "scenario": "G6-publisher-churn-negative-unl",
+      "unit": "ledgers",
+      "value": 86400
+    },
+    {
+      "detail": "338 flag ledgers evaluated (doVoting + fee vote)",
+      "kind": "flag-ledgers",
+      "op": "advance",
+      "outcome": "evaluated",
+      "scenario": "G6-publisher-churn-negative-unl",
+      "unit": "flag ledgers",
+      "value": 338
+    },
+    {
+      "detail": "publisher P3 -> unavailable",
+      "kind": "P3",
+      "op": "set_publisher",
+      "outcome": "unavailable",
+      "scenario": "G6-publisher-churn-negative-unl",
+      "unit": "available",
+      "value": 0
+    },
+    {
+      "detail": "1.0000 days: quorum None, online 35, validated 0, missed 21600",
+      "kind": "ledgers",
+      "op": "advance",
+      "outcome": "missed",
+      "scenario": "G6-publisher-churn-negative-unl",
+      "unit": "ledgers",
+      "value": 0
+    },
+    {
+      "detail": "84 flag ledgers evaluated (doVoting + fee vote)",
+      "kind": "flag-ledgers",
+      "op": "advance",
+      "outcome": "evaluated",
+      "scenario": "G6-publisher-churn-negative-unl",
+      "unit": "flag ledgers",
+      "value": 84
+    },
+    {
+      "detail": "publisher P2 -> available",
+      "kind": "P2",
+      "op": "set_publisher",
+      "outcome": "available",
+      "scenario": "G6-publisher-churn-negative-unl",
+      "unit": "available",
+      "value": 1
+    },
+    {
+      "detail": "2.0000 days: quorum 24, online 35, validated 43200, missed 0",
+      "kind": "ledgers",
+      "op": "advance",
+      "outcome": "validated",
+      "scenario": "G6-publisher-churn-negative-unl",
+      "unit": "ledgers",
+      "value": 43200
+    },
+    {
+      "detail": "169 flag ledgers evaluated (doVoting + fee vote)",
+      "kind": "flag-ledgers",
+      "op": "advance",
+      "outcome": "evaluated",
+      "scenario": "G6-publisher-churn-negative-unl",
+      "unit": "flag ledgers",
+      "value": 169
+    },
+    {
+      "detail": "3 validators marked unreliable (negative UNL)",
+      "kind": "validators",
+      "op": "mark_unreliable",
+      "outcome": "marked-unreliable",
+      "scenario": "G6-publisher-churn-negative-unl",
+      "unit": "validators",
+      "value": 3
+    },
+    {
+      "detail": "24 validators agree to exclude rTestExcludedAccount",
+      "kind": "rTestExcludedAccount",
+      "op": "exclusion_vote",
+      "outcome": "queued",
+      "scenario": "G6-publisher-churn-negative-unl",
+      "unit": "validators",
+      "value": 24
+    },
+    {
+      "detail": "1.0000 days: quorum 22, online 35, validated 21600, missed 0",
+      "kind": "ledgers",
+      "op": "advance",
+      "outcome": "validated",
+      "scenario": "G6-publisher-churn-negative-unl",
+      "unit": "ledgers",
+      "value": 21600
+    },
+    {
+      "detail": "84 flag ledgers evaluated (doVoting + fee vote)",
+      "kind": "flag-ledgers",
+      "op": "advance",
+      "outcome": "evaluated",
+      "scenario": "G6-publisher-churn-negative-unl",
+      "unit": "flag ledgers",
+      "value": 84
+    }
+  ],
+  "scenario_id": "G6-publisher-churn-negative-unl",
+  "severity": "LOW",
+  "severity_reason": "One publisher down: quorum held at 24. Two of three down: quorum disabled for 84 flag ledgers and 21,600 ledgers missed until a publisher returned. 3 unreliable validators lowered the effective UNL to 32 and the quorum to 22. One exclusion (24/35 agreement) applied at one change per 10 ledgers.",
+  "steps": [
+    {
+      "day": 4.0,
+      "flag_ledgers": 337,
+      "ledger_seq": 1086400,
+      "ledgers": 86400,
+      "online": 35,
+      "op": "advance",
+      "quorum": 24,
+      "step": 0
+    },
+    {
+      "available": false,
+      "op": "set_publisher",
+      "publisher": "P2",
+      "step": 1
+    },
+    {
+      "day": 8.0,
+      "flag_ledgers": 338,
+      "ledger_seq": 1172800,
+      "ledgers": 86400,
+      "online": 35,
+      "op": "advance",
+      "quorum": 24,
+      "step": 2
+    },
+    {
+      "available": false,
+      "op": "set_publisher",
+      "publisher": "P3",
+      "step": 3
+    },
+    {
+      "day": 9.0,
+      "flag_ledgers": 84,
+      "ledger_seq": 1194400,
+      "ledgers": 21600,
+      "online": 35,
+      "op": "advance",
+      "quorum": null,
+      "step": 4
+    },
+    {
+      "available": true,
+      "op": "set_publisher",
+      "publisher": "P2",
+      "step": 5
+    },
+    {
+      "day": 11.0,
+      "flag_ledgers": 169,
+      "ledger_seq": 1237600,
+      "ledgers": 43200,
+      "online": 35,
+      "op": "advance",
+      "quorum": 24,
+      "step": 6
+    },
+    {
+      "op": "mark_unreliable",
+      "step": 7,
+      "validators": [
+        "V01",
+        "V02",
+        "V03"
+      ]
+    },
+    {
+      "account": "rTestExcludedAccount",
+      "agreeing": 24,
+      "op": "exclusion_vote",
+      "queued": true,
+      "step": 8
+    },
+    {
+      "day": 12.0,
+      "flag_ledgers": 84,
+      "ledger_seq": 1259200,
+      "ledgers": 21600,
+      "online": 35,
+      "op": "advance",
+      "quorum": 22,
+      "step": 9
+    }
+  ],
+  "title": "Validator-set churn: publisher loss disables quorum, negative UNL lowers it, exclusion applies gradually"
+}

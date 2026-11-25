@@ -1,0 +1,85 @@
+run_all.sh: starting
+G0-baseline-full-governance: 4 rows, 2 events, enabled 1, validated 324000, missed 0, quorum 24
+G1-quorum-failure-minority-majority: 9 rows, 2 events, enabled 0, validated 345600, missed 108000, quorum 24
+G10-majority-time-override: 4 rows, 2 events, enabled 1, validated 21600, missed 0, quorum 24
+G2-veto-deadlock: 9 rows, 2 events, enabled 0, validated 453600, missed 0, quorum 24
+G3-compromised-validator-key: 6 rows, 0 events, enabled 0, validated 151200, missed 0, quorum 23
+G4-emergency-upgrade-no-rollback: 7 rows, 2 events, enabled 1, validated 345600, missed 0, quorum 24
+G5-treasury-fee-gap: 4 rows, 0 events, enabled 0, validated 43200, missed 0, quorum 24
+G6-publisher-churn-negative-unl: 15 rows, 0 events, enabled 0, validated 237600, missed 21600, quorum 22
+G7-majority-loss-clock-restart: 9 rows, 4 events, enabled 1, validated 585360, missed 0, quorum 24
+G8-fee-vote-split-reserves: 5 rows, 0 events, enabled 0, validated 43200, missed 0, quorum 24
+G9-amendment-blocked-divergence: 9 rows, 4 events, enabled 2, validated 756000, missed 0, quorum 24
+matrix: 11 scenarios
+controls: 15 MEASURED, 1 PARTIAL, 3 UNMEASURED
+manifest.json: 67 files
+SHA256SUMS entries: 68
+./.gitignore: OK
+./README.md: OK
+./docs/control-inventory.md: OK
+./docs/decision-memo.md: OK
+./docs/environment.md: OK
+./docs/findings-report.md: OK
+./docs/methodology.md: OK
+./docs/remediation-report.md: OK
+./docs/research-notes.md: OK
+./docs/source-inventory.md: OK
+./manifest.json: OK
+./outputs/G0-baseline-full-governance.csv: OK
+./outputs/G0-baseline-full-governance.json: OK
+./outputs/G0-baseline-full-governance.log: OK
+./outputs/G1-quorum-failure-minority-majority.csv: OK
+./outputs/G1-quorum-failure-minority-majority.json: OK
+./outputs/G1-quorum-failure-minority-majority.log: OK
+./outputs/G10-majority-time-override.csv: OK
+./outputs/G10-majority-time-override.json: OK
+./outputs/G10-majority-time-override.log: OK
+./outputs/G2-veto-deadlock.csv: OK
+./outputs/G2-veto-deadlock.json: OK
+./outputs/G2-veto-deadlock.log: OK
+./outputs/G3-compromised-validator-key.csv: OK
+./outputs/G3-compromised-validator-key.json: OK
+./outputs/G3-compromised-validator-key.log: OK
+./outputs/G4-emergency-upgrade-no-rollback.csv: OK
+./outputs/G4-emergency-upgrade-no-rollback.json: OK
+./outputs/G4-emergency-upgrade-no-rollback.log: OK
+./outputs/G5-treasury-fee-gap.csv: OK
+./outputs/G5-treasury-fee-gap.json: OK
+./outputs/G5-treasury-fee-gap.log: OK
+./outputs/G6-publisher-churn-negative-unl.csv: OK
+./outputs/G6-publisher-churn-negative-unl.json: OK
+./outputs/G6-publisher-churn-negative-unl.log: OK
+./outputs/G7-majority-loss-clock-restart.csv: OK
+./outputs/G7-majority-loss-clock-restart.json: OK
+./outputs/G7-majority-loss-clock-restart.log: OK
+./outputs/G8-fee-vote-split-reserves.csv: OK
+./outputs/G8-fee-vote-split-reserves.json: OK
+./outputs/G8-fee-vote-split-reserves.log: OK
+./outputs/G9-amendment-blocked-divergence.csv: OK
+./outputs/G9-amendment-blocked-divergence.json: OK
+./outputs/G9-amendment-blocked-divergence.log: OK
+./outputs/controls.csv: OK
+./outputs/controls.json: OK
+./outputs/matrix.csv: OK
+./outputs/matrix.json: OK
+./scenarios/G0-baseline-full-governance.json: OK
+./scenarios/G1-quorum-failure-minority-majority.json: OK
+./scenarios/G10-majority-time-override.json: OK
+./scenarios/G2-veto-deadlock.json: OK
+./scenarios/G3-compromised-validator-key.json: OK
+./scenarios/G4-emergency-upgrade-no-rollback.json: OK
+./scenarios/G5-treasury-fee-gap.json: OK
+./scenarios/G6-publisher-churn-negative-unl.json: OK
+./scenarios/G7-majority-loss-clock-restart.json: OK
+./scenarios/G8-fee-vote-split-reserves.json: OK
+./scenarios/G9-amendment-blocked-divergence.json: OK
+./scripts/build_matrix.py: OK
+./scripts/load_harness.py: OK
+./scripts/make_manifest.py: OK
+./scripts/make_reproduction_transcript.py: OK
+./scripts/make_sha256sums.sh: OK
+./scripts/measure_controls.py: OK
+./scripts/run_all.sh: OK
+./scripts/simulator.py: OK
+./scripts/verify_digests.sh: OK
+run_all.sh: OK

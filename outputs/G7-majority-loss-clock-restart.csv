@@ -1,0 +1,10 @@
+scenario,op,kind,outcome,detail,value,unit
+G7-majority-loss-clock-restart,set_support,fixExample,set,30 validators voting up,30,validators
+G7-majority-loss-clock-restart,advance,ledgers,validated,"12.0000 days: quorum 24, online 35, validated 259200, missed 0",259200,ledgers
+G7-majority-loss-clock-restart,advance,flag-ledgers,evaluated,1012 flag ledgers evaluated (doVoting + fee vote),1012,flag ledgers
+G7-majority-loss-clock-restart,set_support,fixExample,set,22 validators voting up,22,validators
+G7-majority-loss-clock-restart,advance,ledgers,validated,"0.1000 days: quorum 24, online 35, validated 2160, missed 0",2160,ledgers
+G7-majority-loss-clock-restart,advance,flag-ledgers,evaluated,9 flag ledgers evaluated (doVoting + fee vote),9,flag ledgers
+G7-majority-loss-clock-restart,set_support,fixExample,set,30 validators voting up,30,validators
+G7-majority-loss-clock-restart,advance,ledgers,validated,"15.0000 days: quorum 24, online 35, validated 324000, missed 0",324000,ledgers
+G7-majority-loss-clock-restart,advance,flag-ledgers,evaluated,1265 flag ledgers evaluated (doVoting + fee vote),1265,flag ledgers

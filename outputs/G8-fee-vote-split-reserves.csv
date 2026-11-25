@@ -1,0 +1,6 @@
+scenario,op,kind,outcome,detail,value,unit
+G8-fee-vote-split-reserves,fee_target,owner_reserve_drops,target-set,operator target owner_reserve_drops = 5000000,5000000,drops
+G8-fee-vote-split-reserves,fee_votes,owner_reserve_drops,votes-cast,"votes {'2000000': 18, '5000000': 17}",35,votes
+G8-fee-vote-split-reserves,fee_votes,base_fee_drops,votes-cast,votes {'10': 18},18,votes
+G8-fee-vote-split-reserves,advance,ledgers,validated,"2.0000 days: quorum 24, online 35, validated 43200, missed 0",43200,ledgers
+G8-fee-vote-split-reserves,advance,flag-ledgers,evaluated,168 flag ledgers evaluated (doVoting + fee vote),168,flag ledgers

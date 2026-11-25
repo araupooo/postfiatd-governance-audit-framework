@@ -1,0 +1,11 @@
+day 0.0000 ledger 1000000: advance 4.0000 days (86400 ledgers, 337 flag ledgers): quorum 24, online 35 — all validated
+day 4.0000 ledger 1086400: publisher P2 -> unavailable
+day 4.0000 ledger 1086400: advance 4.0000 days (86400 ledgers, 338 flag ledgers): quorum 24, online 35 — all validated
+day 8.0000 ledger 1172800: publisher P3 -> unavailable
+day 8.0000 ledger 1172800: advance 1.0000 days (21600 ledgers, 84 flag ledgers): quorum DISABLED (publishers unavailable) — chain halts, 21600 ledgers missed
+day 9.0000 ledger 1194400: publisher P2 -> available
+day 9.0000 ledger 1194400: advance 2.0000 days (43200 ledgers, 169 flag ledgers): quorum 24, online 35 — all validated
+day 11.0000 ledger 1237600: validators V01,V02,V03 marked unreliable (negative UNL)
+day 11.0000 ledger 1237600: exclusion vote rTestExcludedAccount: 24/35 agree (>= 24, 67%) — queued
+day 11.0000 ledger 1237600: advance 1.0000 days (21600 ledgers, 84 flag ledgers): quorum 22, online 35 — all validated
+day 11.0119 ledger 1237856: exclusion applied: rTestExcludedAccount (1 per 10 ledgers)
