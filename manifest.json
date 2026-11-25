@@ -1,0 +1,339 @@
+{
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "791c254def2ee2d55cc30357aa5fbedf733a975dd065b422f8058df92efc67cc",
+      "size": 33
+    },
+    {
+      "path": "README.md",
+      "sha256": "57460c99f5f5e74cc35747d0631f1902aa42c54d8dd345d40198489201535cc6",
+      "size": 6481
+    },
+    {
+      "path": "docs/control-inventory.md",
+      "sha256": "0fe6197b1dd37cc232b2a84d619e2bf0b592bb42e7faf1b3b54f03ccc738b390",
+      "size": 4643
+    },
+    {
+      "path": "docs/decision-memo.md",
+      "sha256": "4235246764fa45435aa0dd2f0ec20d18a9f6f3ef108160f27a3e82d119903617",
+      "size": 4385
+    },
+    {
+      "path": "docs/environment.md",
+      "sha256": "e1675e39bd5cc1849df91a42135709e1ea0e04a18857ebdebe5f3974233467f9",
+      "size": 3900
+    },
+    {
+      "path": "docs/findings-report.md",
+      "sha256": "cde401efff02fd7647b6476ce10e7472732e5059b26ae416f13fe60b3ddfa257",
+      "size": 12669
+    },
+    {
+      "path": "docs/methodology.md",
+      "sha256": "6a96105dcf0084fcba9afb6671572317ac3564708eced6cf73ad7a4361f3b0ae",
+      "size": 7988
+    },
+    {
+      "path": "docs/remediation-report.md",
+      "sha256": "e3054f41a67879a2b175b91466cc502876ef2f1c76db08064c0991e025691868",
+      "size": 6230
+    },
+    {
+      "path": "docs/research-notes.md",
+      "sha256": "d816ee1f58367057f752428a5ec69ef21f1f58ec72c8532927fee7d04dab51ad",
+      "size": 8650
+    },
+    {
+      "path": "docs/source-inventory.md",
+      "sha256": "c5376768d4cd7c8e060bbb462d9cbe9d6f2357318bcc29ffe5107928dc8ea224",
+      "size": 8857
+    },
+    {
+      "path": "outputs/G0-baseline-full-governance.csv",
+      "sha256": "8314be4b6d806d1887272de311303ccac2f79037acb06556e7c0e2abd4fc087a",
+      "size": 492
+    },
+    {
+      "path": "outputs/G0-baseline-full-governance.json",
+      "sha256": "748c154dca3609ceb14daf08423a4279f32fd95c39ba5d0658771564cf1618eb",
+      "size": 3608
+    },
+    {
+      "path": "outputs/G0-baseline-full-governance.log",
+      "sha256": "d27bcd1df317fbfbf547a70c17acbc9c37998f99aa7e4f1c5a65519dca3d8f3e",
+      "size": 463
+    },
+    {
+      "path": "outputs/G1-quorum-failure-minority-majority.csv",
+      "sha256": "542327317f804c8bb56b47d89da372748082c785e784c2f70e1b18d59a0b5a00",
+      "size": 1177
+    },
+    {
+      "path": "outputs/G1-quorum-failure-minority-majority.json",
+      "sha256": "915badb31107a0293f25c2dc5c6b1437437a6b6391014943a34f6ab3f7b70c95",
+      "size": 6055
+    },
+    {
+      "path": "outputs/G1-quorum-failure-minority-majority.log",
+      "sha256": "7be3238d0692274e800d68923e368a69dcc25aa9f7051a89f98ddfc50cd9451e",
+      "size": 896
+    },
+    {
+      "path": "outputs/G10-majority-time-override.csv",
+      "sha256": "2a7cf3223ba567d439f81c3b12de1d02d85d8b5f49bcc7bb9ebda4df245f01ef",
+      "size": 520
+    },
+    {
+      "path": "outputs/G10-majority-time-override.json",
+      "sha256": "59b0a333964fbc34f265c2d0c2471d5a095c6ffc5e00be7a885c030404baf38f",
+      "size": 3688
+    },
+    {
+      "path": "outputs/G10-majority-time-override.log",
+      "sha256": "8dbc343adcadb6eff256761c3161ba1c4e873e5e05517fb744e6519992679df5",
+      "size": 482
+    },
+    {
+      "path": "outputs/G2-veto-deadlock.csv",
+      "sha256": "db7d412e3bac5df669c7cc27440d879f99580d2237e40f2de34824eea2698f89",
+      "size": 1030
+    },
+    {
+      "path": "outputs/G2-veto-deadlock.json",
+      "sha256": "9b44f6ba4569747049fce1c74fc1e697070214a3a72853130bbea6e247e50e3d",
+      "size": 6161
+    },
+    {
+      "path": "outputs/G2-veto-deadlock.log",
+      "sha256": "782b9ed9e8826cb063843f9c812cac26fcef0572f8c2f9ba0b6d894fb52fbd24",
+      "size": 860
+    },
+    {
+      "path": "outputs/G3-compromised-validator-key.csv",
+      "sha256": "cd92ab68bcc37a1fb90c6b58a41f82704b9bf06c14d936ca3c976d80beee139b",
+      "size": 787
+    },
+    {
+      "path": "outputs/G3-compromised-validator-key.json",
+      "sha256": "0498111e41eb766fbb25c0655efc6599be2efdf74de16996e844e79a7e7b5ba5",
+      "size": 3728
+    },
+    {
+      "path": "outputs/G3-compromised-validator-key.log",
+      "sha256": "e88829d5bdac9aebedf53d6f38ca349994705e9ad6a5b95f90e079520015d82c",
+      "size": 448
+    },
+    {
+      "path": "outputs/G4-emergency-upgrade-no-rollback.csv",
+      "sha256": "72653df62ee96010dcd59938728976b02e5c0cf5dc79f7a3fd816e8a46fa7097",
+      "size": 942
+    },
+    {
+      "path": "outputs/G4-emergency-upgrade-no-rollback.json",
+      "sha256": "d2a1f9af940565e3934c8c68d3208368d34a45aefea244ae4ce23083d2c1930b",
+      "size": 5111
+    },
+    {
+      "path": "outputs/G4-emergency-upgrade-no-rollback.log",
+      "sha256": "bdd86ea3532753f426f8f5d7f55b1f0d5c6c19e8b438fe14f76b7c6cb6608d6a",
+      "size": 815
+    },
+    {
+      "path": "outputs/G5-treasury-fee-gap.csv",
+      "sha256": "f6ee2b14662abc5f2b6f5d922adf94b825b8beb34af1a284a799dad454c2fad5",
+      "size": 494
+    },
+    {
+      "path": "outputs/G5-treasury-fee-gap.json",
+      "sha256": "0daf7ee05cd305e7fcd9bf34359a572d87a76568dbbae4f5bed667244e669a70",
+      "size": 3043
+    },
+    {
+      "path": "outputs/G5-treasury-fee-gap.log",
+      "sha256": "5c34d1c9fbb9594f55e37cb85c74df9303b559cf570e16bb848a3ba597adc2c5",
+      "size": 205
+    },
+    {
+      "path": "outputs/G6-publisher-churn-negative-unl.csv",
+      "sha256": "bbad35a23bf80ccea9926f0b8a010941d819aca9ee7903b650eedfcf2e8f667f",
+      "size": 1946
+    },
+    {
+      "path": "outputs/G6-publisher-churn-negative-unl.json",
+      "sha256": "92fd136eb51af49a9f24aaad25402cc6105b8c2f1491796724b4b0fa89bf14f1",
+      "size": 7141
+    },
+    {
+      "path": "outputs/G6-publisher-churn-negative-unl.log",
+      "sha256": "f575762749584d46a23993557b6198cb62627cda81062ed31463c778e5148f01",
+      "size": 1079
+    },
+    {
+      "path": "outputs/G7-majority-loss-clock-restart.csv",
+      "sha256": "9f0a0b57e2aa282d40a9c2d06cd203f5365dc0f4084ae8797da415f362a8bf87",
+      "size": 1131
+    },
+    {
+      "path": "outputs/G7-majority-loss-clock-restart.json",
+      "sha256": "76cc8bab74de713cab9000d4e7b12ad33308086bf2406c22b3debe330fa367b7",
+      "size": 5842
+    },
+    {
+      "path": "outputs/G7-majority-loss-clock-restart.log",
+      "sha256": "b0edd8d701a4177fb2f0a9ef56c7f9fcf913201ca0dbd722a19fe64fed7c70df",
+      "size": 1025
+    },
+    {
+      "path": "outputs/G8-fee-vote-split-reserves.csv",
+      "sha256": "dfc0cc90b2b0972c9b3f0dde415171d6d533d7d3733a4dcfd8cb156293bd7e31",
+      "size": 637
+    },
+    {
+      "path": "outputs/G8-fee-vote-split-reserves.json",
+      "sha256": "acedda9e7f0de2c9e65d67897722d399bf53d97c5a2b9fb02606329cd6662a64",
+      "size": 3414
+    },
+    {
+      "path": "outputs/G8-fee-vote-split-reserves.log",
+      "sha256": "377f1fe983e455f3276037dac360bf9eb0446866d6b974e03f30729f47e198de",
+      "size": 274
+    },
+    {
+      "path": "outputs/G9-amendment-blocked-divergence.csv",
+      "sha256": "c7c33c45c5a8a6e8acfd615a7573e15c3b03eaefbc8bb75a54f384f6db53d64b",
+      "size": 1155
+    },
+    {
+      "path": "outputs/G9-amendment-blocked-divergence.json",
+      "sha256": "2123cf2ac5803d509a9fc7ceed993384153eda69e7fe0bbc93043308b408fba2",
+      "size": 6456
+    },
+    {
+      "path": "outputs/G9-amendment-blocked-divergence.log",
+      "sha256": "5ed7ac61d6e8b9b380151dfa8d79973c3b7a9dc3cddca3729bef06f83b6e2f3e",
+      "size": 1023
+    },
+    {
+      "path": "outputs/controls.csv",
+      "sha256": "197bc636d84cdc9e0bbe1067f014ef455d2825031e9c7fabbc16b1f87b83d996",
+      "size": 8294
+    },
+    {
+      "path": "outputs/controls.json",
+      "sha256": "97b35ebe3d3c5d6c0386e5316c341a6e69b5a521f58ae0d89d739c93617d7352",
+      "size": 10507
+    },
+    {
+      "path": "outputs/matrix.csv",
+      "sha256": "4997753bb20a761a9a00d7c1a80818720feac078cf384c1f0ee9d1791ebe6ecf",
+      "size": 5958
+    },
+    {
+      "path": "outputs/matrix.json",
+      "sha256": "c1489bdc5a33775764d7037d4e851fe966d93ed5e4a2103daff191d349d76fc6",
+      "size": 11829
+    },
+    {
+      "path": "scenarios/G0-baseline-full-governance.json",
+      "sha256": "d051d0db3581dd81d8104e5655feafed251dc2a587623d3acbea2aa346b8b1a6",
+      "size": 1619
+    },
+    {
+      "path": "scenarios/G1-quorum-failure-minority-majority.json",
+      "sha256": "0d5ed322fc941b43380bb60d881d51dca39a2eb5e07a818ed759cd13431cec1e",
+      "size": 2487
+    },
+    {
+      "path": "scenarios/G10-majority-time-override.json",
+      "sha256": "2a4684e23bce8279f22ef43587ca671f75628ffe6c71d495a7b35bc566840501",
+      "size": 1754
+    },
+    {
+      "path": "scenarios/G2-veto-deadlock.json",
+      "sha256": "b68df91d4a7460b193c4af37facfd505b640a23e1505b1cf48812bee1de43a80",
+      "size": 2217
+    },
+    {
+      "path": "scenarios/G3-compromised-validator-key.json",
+      "sha256": "2d357a00736cff12a0ca41ce4e183ed43a8a3d12e5ceca91d9bc9a552e272432",
+      "size": 1210
+    },
+    {
+      "path": "scenarios/G4-emergency-upgrade-no-rollback.json",
+      "sha256": "e766d90186b29595a7ffae9a018c7034a028b70f1fbbfc431d337fc334784bb6",
+      "size": 1769
+    },
+    {
+      "path": "scenarios/G5-treasury-fee-gap.json",
+      "sha256": "ab15b6d9b8ec6e10e6637e5d3917fb0e3bd188ed683e0190d2265d4c20843114",
+      "size": 1434
+    },
+    {
+      "path": "scenarios/G6-publisher-churn-negative-unl.json",
+      "sha256": "97696c434679ae5854882f0c01bdda717133dd00fad8ef6e34c22c4a92256930",
+      "size": 1893
+    },
+    {
+      "path": "scenarios/G7-majority-loss-clock-restart.json",
+      "sha256": "71747800022657ca756c6bda68b3e4d79dcb3fbff18c15a8e44614f37ab407c3",
+      "size": 2680
+    },
+    {
+      "path": "scenarios/G8-fee-vote-split-reserves.json",
+      "sha256": "38897246a3fc2d1ae2095e18287dadc0e99f1252f740721af24ea5e09ec2a506",
+      "size": 1385
+    },
+    {
+      "path": "scenarios/G9-amendment-blocked-divergence.json",
+      "sha256": "c48d02fe72d7fb4afdf253180021421bb57e27b2b97a6e9a77a029fb3b07478b",
+      "size": 2734
+    },
+    {
+      "path": "scripts/build_matrix.py",
+      "sha256": "b82196860a1838a88d50e0832efb5b9c8368ac6e1eb27041f7d205e1ebeb9695",
+      "size": 3751
+    },
+    {
+      "path": "scripts/load_harness.py",
+      "sha256": "7701808e0cb9af3fe916d3b014daf9d6bbb9ad90182acf7e6992fe14465ae8a1",
+      "size": 10879
+    },
+    {
+      "path": "scripts/make_manifest.py",
+      "sha256": "d9903635e19aadb35805e972b82cc256dfab7d358f1c4fc370351d8928c3e716",
+      "size": 1875
+    },
+    {
+      "path": "scripts/make_reproduction_transcript.py",
+      "sha256": "bc5711aea6f21c51dcedbb5f151ff53c1cdfc147809cfc002b4cb80a5a9fbb82",
+      "size": 5399
+    },
+    {
+      "path": "scripts/make_sha256sums.sh",
+      "sha256": "4b5d010f83ddeb7526d9b8d6ec964f39c4d7a209c7cb56ee69d8452e358e98e2",
+      "size": 596
+    },
+    {
+      "path": "scripts/measure_controls.py",
+      "sha256": "5c01d3cf816bd09e99821a9fe2a588a12c371a94a161ea2084fc0e1618217ed2",
+      "size": 19160
+    },
+    {
+      "path": "scripts/run_all.sh",
+      "sha256": "8b6718cd62cddec73dd4f0d92d007c41ee313fcb8f4321f9773ef79d528c37b5",
+      "size": 833
+    },
+    {
+      "path": "scripts/simulator.py",
+      "sha256": "1c6dfb93067158e31aed352d846a77816d8366bd776cc96d96cc86efe51934c4",
+      "size": 27734
+    },
+    {
+      "path": "scripts/verify_digests.sh",
+      "sha256": "8040bf0f588d3ce3958a1a9cbc55617341692e13797f5426f2fd0a0d8c6df95e",
+      "size": 189
+    }
+  ]
+}
