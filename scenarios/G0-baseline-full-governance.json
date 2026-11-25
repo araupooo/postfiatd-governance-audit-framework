@@ -1,0 +1,72 @@
+{
+  "config": {
+    "amendments": [
+      {
+        "name": "fixExample",
+        "vote_behavior": "DefaultNo"
+      }
+    ],
+    "majority_hold_days": 14,
+    "post_fix": true,
+    "publishers": [
+      "P1",
+      "P2",
+      "P3"
+    ],
+    "validators": 35
+  },
+  "id": "G0-baseline-full-governance",
+  "notes": "Control case. 35 validators, 3 publishers, post-fix 67% threshold, 2-week hold. Amendment fixExample has 30/35 support from day 0; all 35 vote the current base fee. Expect enablement after the 14-day hold, quorum 24, zero missed ledgers.",
+  "severity": "INFO",
+  "severity_reason": "Baseline control: 30/35 support, threshold 23, majority day 0.0119, enabled day 14.0207 after the full 14-day hold; quorum 24; 324,000/324,000 ledgers validated, 0 missed; base fee unchanged at 10 drops.",
+  "steps": [
+    {
+      "amendment": "fixExample",
+      "op": "set_support",
+      "up_voters": [
+        "V01",
+        "V02",
+        "V03",
+        "V04",
+        "V05",
+        "V06",
+        "V07",
+        "V08",
+        "V09",
+        "V10",
+        "V11",
+        "V12",
+        "V13",
+        "V14",
+        "V15",
+        "V16",
+        "V17",
+        "V18",
+        "V19",
+        "V20",
+        "V21",
+        "V22",
+        "V23",
+        "V24",
+        "V25",
+        "V26",
+        "V27",
+        "V28",
+        "V29",
+        "V30"
+      ]
+    },
+    {
+      "distribution": {
+        "10": 35
+      },
+      "field": "base_fee_drops",
+      "op": "fee_votes"
+    },
+    {
+      "days": 15,
+      "op": "advance"
+    }
+  ],
+  "title": "Baseline: full governance stack under normal conditions"
+}

@@ -1,0 +1,52 @@
+{
+  "config": {
+    "amendments": [
+      {
+        "name": "fixCritical",
+        "vote_behavior": "DefaultYes"
+      }
+    ],
+    "majority_hold_days": 14,
+    "post_fix": true,
+    "publishers": [
+      "P1",
+      "P2",
+      "P3"
+    ],
+    "validators": 35
+  },
+  "id": "G4-emergency-upgrade-no-rollback",
+  "notes": "A critical fix amendment (DefaultYes) needs 14 days to activate \u2014 too slow for an active exploit, so the emergency path is a binary upgrade. 5 validators never upgrade and become amendment-blocked once the fix enables. The operator then tries to roll the amendment back: there is no in-protocol path (disabling a passed amendment requires a new amendment). Per-node ledger replay re-executes ledgers but changes nothing about the enabled amendment.",
+  "severity": "HIGH",
+  "severity_reason": "A DefaultYes critical fix needs the full 14-day hold (enabled day 14.0207) \u2014 too slow for an active exploit, so the emergency path is a binary upgrade; 5 validators never upgraded and became amendment-blocked. The rollback attempt failed (1 attempt, 1 failure): no in-protocol path exists. Per-node replay of 100 ledgers re-executed history without changing the enabled amendment.",
+  "steps": [
+    {
+      "days": 15,
+      "op": "advance"
+    },
+    {
+      "has_new_binary": false,
+      "op": "set_binary",
+      "validators": [
+        "V31",
+        "V32",
+        "V33",
+        "V34",
+        "V35"
+      ]
+    },
+    {
+      "days": 1,
+      "op": "advance"
+    },
+    {
+      "amendment": "fixCritical",
+      "op": "rollback_attempt"
+    },
+    {
+      "ledgers": 100,
+      "op": "ledger_replay"
+    }
+  ],
+  "title": "Emergency upgrade: the 14-day amendment wait is too slow, and an enabled amendment cannot be rolled back"
+}

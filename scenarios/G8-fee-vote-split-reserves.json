@@ -1,0 +1,44 @@
+{
+  "config": {
+    "amendments": [],
+    "majority_hold_days": 14,
+    "post_fix": true,
+    "publishers": [
+      "P1",
+      "P2",
+      "P3"
+    ],
+    "validators": 35
+  },
+  "id": "G8-fee-vote-split-reserves",
+  "notes": "Owner-reserve vote splits 18 for the current 2 XRP against 17 for 5 XRP: the modal value is the current one, so the reserve does not move. Base-fee vote: only 18 validators submit a fee field; the other 17 count as noVote (current). The fee vote moves only on a modal majority, never on a plurality against the current value.",
+  "severity": "LOW",
+  "severity_reason": "Owner-reserve vote split 18 for the current 2 XRP against 17 for 5 XRP: the modal value is current, so the reserve did not move. Base-fee vote: 18 submitted a fee field, 17 counted as noVote; the fee stayed at 10 drops. 0 fee changes.",
+  "steps": [
+    {
+      "field": "owner_reserve_drops",
+      "op": "fee_target",
+      "value": 5000000
+    },
+    {
+      "distribution": {
+        "2000000": 18,
+        "5000000": 17
+      },
+      "field": "owner_reserve_drops",
+      "op": "fee_votes"
+    },
+    {
+      "distribution": {
+        "10": 18
+      },
+      "field": "base_fee_drops",
+      "op": "fee_votes"
+    },
+    {
+      "days": 2,
+      "op": "advance"
+    }
+  ],
+  "title": "Fee-vote split: reserve change stalls on a near-tie and silent validators count as no-votes"
+}

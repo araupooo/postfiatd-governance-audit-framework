@@ -1,0 +1,124 @@
+{
+  "config": {
+    "amendments": [
+      {
+        "name": "fixExample",
+        "vote_behavior": "DefaultNo"
+      },
+      {
+        "name": "fixSecond",
+        "vote_behavior": "DefaultNo"
+      }
+    ],
+    "majority_hold_days": 14,
+    "post_fix": true,
+    "publishers": [
+      "P1",
+      "P2",
+      "P3"
+    ],
+    "validators": 35
+  },
+  "id": "G9-amendment-blocked-divergence",
+  "notes": "fixExample enables on day ~14. 5 validators never upgrade their binary and become amendment-blocked: they cannot validate and cannot vote on future amendments. The network keeps validating (30 online >= quorum 24) and a second amendment still enables, but the safety margin shrinks from 11 to 6 validators: 6 more failures halt the chain where 11 could before.",
+  "severity": "MEDIUM",
+  "severity_reason": "5 validators on old binaries became amendment-blocked when fixExample enabled (day 14.0207): they cannot validate or vote. The network kept validating (30 online >= quorum 24) and fixSecond still enabled (day 34.0207, threshold 20 at 30 validations \u2014 the denominator shrank again), but the safety margin shrank from 11 to 6 validators.",
+  "steps": [
+    {
+      "amendment": "fixExample",
+      "op": "set_support",
+      "up_voters": [
+        "V01",
+        "V02",
+        "V03",
+        "V04",
+        "V05",
+        "V06",
+        "V07",
+        "V08",
+        "V09",
+        "V10",
+        "V11",
+        "V12",
+        "V13",
+        "V14",
+        "V15",
+        "V16",
+        "V17",
+        "V18",
+        "V19",
+        "V20",
+        "V21",
+        "V22",
+        "V23",
+        "V24",
+        "V25",
+        "V26",
+        "V27",
+        "V28",
+        "V29",
+        "V30"
+      ]
+    },
+    {
+      "days": 15,
+      "op": "advance"
+    },
+    {
+      "has_new_binary": false,
+      "op": "set_binary",
+      "validators": [
+        "V31",
+        "V32",
+        "V33",
+        "V34",
+        "V35"
+      ]
+    },
+    {
+      "days": 5,
+      "op": "advance"
+    },
+    {
+      "amendment": "fixSecond",
+      "op": "set_support",
+      "up_voters": [
+        "V01",
+        "V02",
+        "V03",
+        "V04",
+        "V05",
+        "V06",
+        "V07",
+        "V08",
+        "V09",
+        "V10",
+        "V11",
+        "V12",
+        "V13",
+        "V14",
+        "V15",
+        "V16",
+        "V17",
+        "V18",
+        "V19",
+        "V20",
+        "V21",
+        "V22",
+        "V23",
+        "V24",
+        "V25",
+        "V26",
+        "V27",
+        "V28",
+        "V29",
+        "V30"
+      ]
+    },
+    {
+      "days": 15,
+      "op": "advance"
+    }
+  ],
+  "title": "Amendment-blocked divergence: 5 validators on old binaries lose vote and validation, shrinking the safety margin"
+}

@@ -1,0 +1,103 @@
+{
+  "config": {
+    "amendments": [
+      {
+        "name": "fixExample",
+        "vote_behavior": "DefaultNo"
+      },
+      {
+        "has_code": false,
+        "name": "unknownFeature",
+        "vote_behavior": "DefaultNo"
+      }
+    ],
+    "majority_hold_days": 14,
+    "post_fix": true,
+    "publishers": [
+      "P1",
+      "P2",
+      "P3"
+    ],
+    "validators": 35
+  },
+  "id": "G2-veto-deadlock",
+  "notes": "fixExample has 30/35 support, then 12 validators veto (vote down, persisted). Support falls below the 24-vote bar and never recovers: one un-veto is not enough. A second amendment, unknownFeature, has no code in the assessed build and is effectively vetoed already (AmendmentTable.cpp:648).",
+  "severity": "MEDIUM",
+  "severity_reason": "12 vetoes cut support 30 -> 18 on day 3 (majority lost after holding 3.0 days); one un-veto raised it to 19, still below the 24-vote bar; the amendment never enabled over 21 days. unknownFeature has no code and never entered voting (effectively vetoed).",
+  "steps": [
+    {
+      "amendment": "fixExample",
+      "op": "set_support",
+      "up_voters": [
+        "V01",
+        "V02",
+        "V03",
+        "V04",
+        "V05",
+        "V06",
+        "V07",
+        "V08",
+        "V09",
+        "V10",
+        "V11",
+        "V12",
+        "V13",
+        "V14",
+        "V15",
+        "V16",
+        "V17",
+        "V18",
+        "V19",
+        "V20",
+        "V21",
+        "V22",
+        "V23",
+        "V24",
+        "V25",
+        "V26",
+        "V27",
+        "V28",
+        "V29",
+        "V30"
+      ]
+    },
+    {
+      "days": 3,
+      "op": "advance"
+    },
+    {
+      "amendment": "fixExample",
+      "op": "veto",
+      "validators": [
+        "V19",
+        "V20",
+        "V21",
+        "V22",
+        "V23",
+        "V24",
+        "V25",
+        "V26",
+        "V27",
+        "V28",
+        "V29",
+        "V30"
+      ]
+    },
+    {
+      "days": 7,
+      "op": "advance"
+    },
+    {
+      "amendment": "fixExample",
+      "op": "unveto",
+      "validators": [
+        "V19"
+      ]
+    },
+    {
+      "days": 11,
+      "op": "advance"
+    }
+  ],
+  "title": "Veto deadlock: a blocking minority vetoes an amendment with 30/35 support"
+}

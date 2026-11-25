@@ -1,0 +1,102 @@
+{
+  "config": {
+    "amendments": [
+      {
+        "name": "fixExample",
+        "vote_behavior": "DefaultNo"
+      }
+    ],
+    "majority_hold_days": 14,
+    "post_fix": true,
+    "publishers": [
+      "P1",
+      "P2",
+      "P3"
+    ],
+    "validators": 35
+  },
+  "id": "G1-quorum-failure-minority-majority",
+  "notes": "Amendment fixExample has 23/35 support (65.7%), below the 24-vote passage bar at full attendance. 12 validators go offline for 5 days: the chain halts (23 online < quorum 24) AND the threshold denominator shrinks to the 23 validations received, so the same 23 votes pass (threshold 15) and the amendment gains majority during the outage. On recovery the denominator returns to 35, the bar returns to 24, and the majority is lost \u2014 the 14-day clock restarts.",
+  "severity": "MEDIUM",
+  "severity_reason": "12 validators offline for 5 days: 108,000 ledgers missed (chain halts, 23 online < quorum 24). During the outage the threshold denominator shrank to the 23 validations received (threshold 15), so the 23-vote minority gained majority on day 5.0119; on recovery the bar returned to 24 and the majority was lost on day 10.0119 after holding 5.0 days \u2014 1 restart, never enabled.",
+  "steps": [
+    {
+      "amendment": "fixExample",
+      "op": "set_support",
+      "up_voters": [
+        "V01",
+        "V02",
+        "V03",
+        "V04",
+        "V05",
+        "V06",
+        "V07",
+        "V08",
+        "V09",
+        "V10",
+        "V11",
+        "V12",
+        "V13",
+        "V14",
+        "V15",
+        "V16",
+        "V17",
+        "V18",
+        "V19",
+        "V20",
+        "V21",
+        "V22",
+        "V23"
+      ]
+    },
+    {
+      "days": 5,
+      "op": "advance"
+    },
+    {
+      "online": false,
+      "op": "set_online",
+      "validators": [
+        "V24",
+        "V25",
+        "V26",
+        "V27",
+        "V28",
+        "V29",
+        "V30",
+        "V31",
+        "V32",
+        "V33",
+        "V34",
+        "V35"
+      ]
+    },
+    {
+      "days": 5,
+      "op": "advance"
+    },
+    {
+      "online": true,
+      "op": "set_online",
+      "validators": [
+        "V24",
+        "V25",
+        "V26",
+        "V27",
+        "V28",
+        "V29",
+        "V30",
+        "V31",
+        "V32",
+        "V33",
+        "V34",
+        "V35"
+      ]
+    },
+    {
+      "days": 11,
+      "op": "advance"
+    }
+  ],
+  "title": "Quorum failure: chain halts, and a 65.7% minority gains amendment majority during the outage"
+}

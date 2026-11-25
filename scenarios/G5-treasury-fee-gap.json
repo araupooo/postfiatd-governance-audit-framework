@@ -1,0 +1,38 @@
+{
+  "config": {
+    "amendments": [],
+    "majority_hold_days": 14,
+    "post_fix": true,
+    "publishers": [
+      "P1",
+      "P2",
+      "P3"
+    ],
+    "validators": 35
+  },
+  "id": "G5-treasury-fee-gap",
+  "notes": "Treasury: no treasury control exists in the assessed code (zero 'treasury' hits in src/) or in the whitepaper (zero hits) \u2014 fees burn and there is no validator subsidy, so there is nothing to govern. Fee vote: the operator targets a 12-drop base fee, but validators split 12/12/11 across 10/12/15 drops; the 15-drop votes fall outside the current-to-target interval and are discarded, the 10/12 tie keeps the current fee. The fee does not move.",
+  "severity": "MEDIUM",
+  "severity_reason": "No treasury control exists (0 hits in code, 0 in the whitepaper) \u2014 fee votes are the only economic control. The fee vote split 12/12/11 across 10/12/15 drops with target 12: the 15-drop votes fell outside [current, target] and were discarded, the 10/12 tie kept the fee at 10 drops; 0 fee changes.",
+  "steps": [
+    {
+      "field": "base_fee_drops",
+      "op": "fee_target",
+      "value": 12
+    },
+    {
+      "distribution": {
+        "10": 12,
+        "12": 12,
+        "15": 11
+      },
+      "field": "base_fee_drops",
+      "op": "fee_votes"
+    },
+    {
+      "days": 2,
+      "op": "advance"
+    }
+  ],
+  "title": "Treasury and fee controls: no treasury exists; a split fee vote changes nothing"
+}

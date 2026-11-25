@@ -1,0 +1,137 @@
+{
+  "config": {
+    "amendments": [
+      {
+        "name": "fixExample",
+        "vote_behavior": "DefaultNo"
+      }
+    ],
+    "majority_hold_days": 14,
+    "post_fix": true,
+    "publishers": [
+      "P1",
+      "P2",
+      "P3"
+    ],
+    "validators": 35
+  },
+  "id": "G7-majority-loss-clock-restart",
+  "notes": "fixExample holds majority for 12 days, then support dips to 22/35 for one flag-ledger interval. The majority is lost, the 14-day clock restarts from zero, and the amendment enables ~12 days later than it would have. The 2-hour dip costs the full 12 days already banked.",
+  "severity": "MEDIUM",
+  "severity_reason": "Majority held 12.0 days, then a dip to 22/35 support for one flag-ledger interval lost the majority; the 14-day clock restarted and the amendment enabled day 26.1207 \u2014 12.1 days later than the day-14.0207 baseline. A ~2-hour dip cost the 12 banked days.",
+  "steps": [
+    {
+      "amendment": "fixExample",
+      "op": "set_support",
+      "up_voters": [
+        "V01",
+        "V02",
+        "V03",
+        "V04",
+        "V05",
+        "V06",
+        "V07",
+        "V08",
+        "V09",
+        "V10",
+        "V11",
+        "V12",
+        "V13",
+        "V14",
+        "V15",
+        "V16",
+        "V17",
+        "V18",
+        "V19",
+        "V20",
+        "V21",
+        "V22",
+        "V23",
+        "V24",
+        "V25",
+        "V26",
+        "V27",
+        "V28",
+        "V29",
+        "V30"
+      ]
+    },
+    {
+      "days": 12,
+      "op": "advance"
+    },
+    {
+      "amendment": "fixExample",
+      "op": "set_support",
+      "up_voters": [
+        "V01",
+        "V02",
+        "V03",
+        "V04",
+        "V05",
+        "V06",
+        "V07",
+        "V08",
+        "V09",
+        "V10",
+        "V11",
+        "V12",
+        "V13",
+        "V14",
+        "V15",
+        "V16",
+        "V17",
+        "V18",
+        "V19",
+        "V20",
+        "V21",
+        "V22"
+      ]
+    },
+    {
+      "days": 0.1,
+      "op": "advance"
+    },
+    {
+      "amendment": "fixExample",
+      "op": "set_support",
+      "up_voters": [
+        "V01",
+        "V02",
+        "V03",
+        "V04",
+        "V05",
+        "V06",
+        "V07",
+        "V08",
+        "V09",
+        "V10",
+        "V11",
+        "V12",
+        "V13",
+        "V14",
+        "V15",
+        "V16",
+        "V17",
+        "V18",
+        "V19",
+        "V20",
+        "V21",
+        "V22",
+        "V23",
+        "V24",
+        "V25",
+        "V26",
+        "V27",
+        "V28",
+        "V29",
+        "V30"
+      ]
+    },
+    {
+      "days": 15,
+      "op": "advance"
+    }
+  ],
+  "title": "Majority-loss clock restart: a 2-hour dip costs 12 days"
+}

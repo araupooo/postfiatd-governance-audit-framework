@@ -1,0 +1,36 @@
+{
+  "config": {
+    "amendments": [],
+    "majority_hold_days": 14,
+    "post_fix": true,
+    "publishers": [
+      "P1",
+      "P2",
+      "P3"
+    ],
+    "validators": 35
+  },
+  "id": "G3-compromised-validator-key",
+  "notes": "V07's ephemeral signing key is compromised: a new manifest with a higher sequence number rotates it (Manifest.h:44-76). V11's master key is compromised: a manifest with sequence 0xFFFFFFFF revokes it and the validator leaves the UNL; the validation quorum recomputes from 35 to 34 validators.",
+  "severity": "LOW",
+  "severity_reason": "V07 signing-key compromise recovered by 1 manifest rotation (sequence 1 -> 2) with no validation interruption. V11 master-key compromise required 1 revocation manifest (sequence 0xFFFFFFFF); the validator left the UNL (35 -> 34) and the quorum recomputed 24 -> 23.",
+  "steps": [
+    {
+      "op": "rotate_manifest",
+      "validator": "V07"
+    },
+    {
+      "days": 2,
+      "op": "advance"
+    },
+    {
+      "op": "revoke_manifest",
+      "validator": "V11"
+    },
+    {
+      "days": 5,
+      "op": "advance"
+    }
+  ],
+  "title": "Compromised validator key: manifest rotation recovers a signing key, revocation removes a master key"
+}

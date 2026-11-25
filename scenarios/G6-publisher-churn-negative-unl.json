@@ -1,0 +1,68 @@
+{
+  "config": {
+    "amendments": [],
+    "majority_hold_days": 14,
+    "post_fix": true,
+    "publishers": [
+      "P1",
+      "P2",
+      "P3"
+    ],
+    "validators": 35
+  },
+  "id": "G6-publisher-churn-negative-unl",
+  "notes": "3 publishers, listThreshold 2 (N/2+1). One publisher down: lists still usable, quorum 24 holds. Two publishers down: unavailable (2) reaches min(2, 3-2+1=2), quorum is disabled and the chain halts until a publisher returns. 3 validators marked unreliable (negative UNL) lower the effective UNL to 32 and the quorum to 22. An exclusion vote with 24/35 agreement queues one account; it applies at one change per 10 ledgers.",
+  "severity": "LOW",
+  "severity_reason": "One publisher down: quorum held at 24. Two of three down: quorum disabled for 84 flag ledgers and 21,600 ledgers missed until a publisher returned. 3 unreliable validators lowered the effective UNL to 32 and the quorum to 22. One exclusion (24/35 agreement) applied at one change per 10 ledgers.",
+  "steps": [
+    {
+      "days": 4,
+      "op": "advance"
+    },
+    {
+      "available": false,
+      "op": "set_publisher",
+      "publisher": "P2"
+    },
+    {
+      "days": 4,
+      "op": "advance"
+    },
+    {
+      "available": false,
+      "op": "set_publisher",
+      "publisher": "P3"
+    },
+    {
+      "days": 1,
+      "op": "advance"
+    },
+    {
+      "available": true,
+      "op": "set_publisher",
+      "publisher": "P2"
+    },
+    {
+      "days": 2,
+      "op": "advance"
+    },
+    {
+      "op": "mark_unreliable",
+      "validators": [
+        "V01",
+        "V02",
+        "V03"
+      ]
+    },
+    {
+      "account": "rTestExcludedAccount",
+      "agreeing": 24,
+      "op": "exclusion_vote"
+    },
+    {
+      "days": 1,
+      "op": "advance"
+    }
+  ],
+  "title": "Validator-set churn: publisher loss disables quorum, negative UNL lowers it, exclusion applies gradually"
+}
